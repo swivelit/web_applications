@@ -466,14 +466,19 @@
           <div class="glass">
             <h4 class="text-center fw-bold mb-3">Quick Enquiry</h4>
             <form id="bannerForm" novalidate>
+              <!-- These hidden fields are sent to EmailJS template -->
+              <input type="hidden" name="to_email" value="info@swivelit.in" />
+              <input type="hidden" name="subject" value="enquiry" />
+              <input type="hidden" name="form_type" value="banner_quick_enquiry" />
+
               <label class="visually-hidden" for="bName">Your Name</label>
-              <input id="bName" class="form-control mb-3" type="text" name="name" placeholder="Your Name" required />
+              <input id="bName" class="form-control mb-3" type="text" name="name" placeholder="Your Name" autocomplete="name" required />
 
               <label class="visually-hidden" for="bEmail">Email Address</label>
-              <input id="bEmail" class="form-control mb-3" type="email" name="email" placeholder="Email Address" required />
+              <input id="bEmail" class="form-control mb-3" type="email" name="email" placeholder="Email Address" autocomplete="email" required />
 
               <label class="visually-hidden" for="bMobile">Mobile Number</label>
-              <input id="bMobile" class="form-control mb-3" type="tel" name="mobile" placeholder="Mobile Number" required />
+              <input id="bMobile" class="form-control mb-3" type="tel" name="mobile" placeholder="Mobile Number" inputmode="tel" autocomplete="tel" required />
 
               <label class="visually-hidden" for="bMsg">Message</label>
               <textarea id="bMsg" class="form-control mb-3" name="message" rows="4" placeholder="Message"></textarea>
@@ -715,18 +720,23 @@
         <div class="col-lg-7" data-aos="zoom-in">
           <div class="glass">
             <form id="contactForm" novalidate>
+              <!-- These hidden fields are sent to EmailJS template -->
+              <input type="hidden" name="to_email" value="info@swivelit.in" />
+              <input type="hidden" name="subject" value="enquiry" />
+              <input type="hidden" name="form_type" value="admission_enquiry" />
+
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label fw-semibold" for="cName">Full Name</label>
-                  <input id="cName" class="form-control" type="text" name="name" placeholder="Full Name" required />
+                  <input id="cName" class="form-control" type="text" name="name" placeholder="Full Name" autocomplete="name" required />
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-semibold" for="cMobile">Mobile Number</label>
-                  <input id="cMobile" class="form-control" type="tel" name="mobile" placeholder="Mobile Number" required />
+                  <input id="cMobile" class="form-control" type="tel" name="mobile" placeholder="Mobile Number" inputmode="tel" autocomplete="tel" required />
                 </div>
                 <div class="col-12">
                   <label class="form-label fw-semibold" for="cEmail">Email Address</label>
-                  <input id="cEmail" class="form-control" type="email" name="email" placeholder="Email Address" required />
+                  <input id="cEmail" class="form-control" type="email" name="email" placeholder="Email Address" autocomplete="email" required />
                 </div>
                 <div class="col-12">
                   <label class="form-label fw-semibold" for="cMsg">Your Enquiry</label>
