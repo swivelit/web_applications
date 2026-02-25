@@ -1,381 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Swivel Academy | Professional Training & Placements</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Swivel Academy | Professional Training & Placements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#7ebbdc" />
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<!-- AOS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-<style>
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f4f8ff;
-scroll-behavior:smooth;
-}
+  <!-- Fonts (optional but nice) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-/* NAVBAR */
-.navbar{
-background:linear-gradient(90deg,#0a1f44,#123c7a);
-padding:15px 0;
-}
-.navbar-brand{
-color:white!important;
-font-size:26px;
-font-weight:bold;
-}
+  <!-- Favicon (uses your local image) -->
+  <link rel="icon" href="images/swivelacademy.jpeg" />
 
-/* HERO */
-.hero{
-min-height:100vh;
-background:linear-gradient(rgba(10,31,68,0.85),rgba(18,60,122,0.85)),
-url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') center/cover;
-color:white;
-display:flex;
-align-items:center;
-}
-.hero h1{
-font-size:50px;
-font-weight:700;
-}
-.btn-main{
-background:#1f6feb;
-border:none;
-padding:12px 25px;
-font-weight:600;
-}
-.btn-main:hover{
-background:#155ab6;
-}
+  <style>
+    :root{
+      /* Brand */
+      --sa-primary: #7ebbdc;     /* requested */
+      --sa-primary-100: #eaf6fc;
+      --sa-primary-200: #cfeaf5;
+      --sa-primary-300: #aed9ee;
+      --sa-primary-700: #2f7f9e;
+      --sa-ink: #0b1f2a;
+      --sa-ink-2: #123342;
+      --sa-surface: #ffffff;
+      --sa-bg: #f4fbff;
 
-/* GLASS FORM */
-.glass{
-background:rgba(255,255,255,0.95);
-border-radius:20px;
-padding:30px;
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-}
-.glass input,.glass textarea{
-width:100%;
-margin-bottom:15px;
-padding:10px;
-border-radius:8px;
-border:1px solid #ddd;
-}
+      --radius-xl: 22px;
+      --shadow-soft: 0 14px 40px rgba(11, 31, 42, 0.10);
+      --shadow-lift: 0 22px 60px rgba(11, 31, 42, 0.18);
 
-/* SECTION */
-section{
-padding:80px 0;
-}
-.section-title{
-text-align:center;
-font-weight:700;
-color:#0a1f44;
-margin-bottom:60px;
-}
+      --nav-h: 76px;
+    }
 
-/* GLASS CARDS */
-.glass-card{
-background:rgba(255,255,255,0.75);
-backdrop-filter:blur(10px);
-border-radius:20px;
-padding:30px;
-transition:0.4s;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
-height:100%;
-}
-.glass-card:hover{
-transform:translateY(-12px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-background:white;
-}
+    html { scroll-behavior: smooth; }
 
-.icon-box{
-width:70px;
-height:70px;
-background:linear-gradient(135deg,#1f6feb,#0a1f44);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:20px;
-color:white;
-font-size:28px;
-}
+    body{
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 0%, var(--sa-primary-200), transparent 60%),
+                  radial-gradient(1000px 600px at 90% 10%, rgba(126,187,220,0.35), transparent 55%),
+                  var(--sa-bg);
+      color: var(--sa-ink);
+      padding-top: var(--nav-h); /* prevent fixed navbar overlap */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-.glass-card ul{
-padding-left:18px;
-}
-.glass-card ul li{
-margin-bottom:6px;
-}
+    /* Reduce animations if user prefers */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ animation: none !important; transition: none !important; }
+    }
 
-/* FOOTER */
-footer{
-background:linear-gradient(90deg,#0a1f44,#123c7a);
-color:white;
-padding-top:60px;
-}
-.footer-links li{
-margin-bottom:8px;
-}
-.footer-links a{
-color:#ddd;
-text-decoration:none;
-}
-.footer-links a:hover{
-color:white;
-}
-.footer-social i{
-font-size:20px;
-margin-right:12px;
-}
-</style>
+    /* ---------- NAVBAR ---------- */
+    .navbar{
+      min-height: var(--nav-h);
+      padding: calc(10px + env(safe-area-inset-top)) 0 10px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.70);
+      border-bottom: 1px solid rgba(18, 51, 66, 0.08);
+      transition: background 250ms ease, box-shadow 250ms ease;
+    }
+    .navbar.scrolled{
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 10px 28px rgba(11,31,42,0.10);
+    }
+    .navbar-brand{
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--sa-ink) !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo{
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(11,31,42,0.15);
+    }
+    .nav-link{
+      color: rgba(11,31,42,0.78) !important;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 10px 14px !important;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+    .nav-link:hover{
+      background: rgba(126,187,220,0.20);
+      transform: translateY(-1px);
+    }
+    .nav-link.active{
+      background: rgba(126,187,220,0.26);
+      color: var(--sa-ink) !important;
+    }
+    .navbar-toggler{
+      border: 0;
+      box-shadow: none !important;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position: relative;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(900px 480px at 20% 20%, rgba(126,187,220,0.55), transparent 60%),
+        radial-gradient(800px 520px at 80% 30%, rgba(47,127,158,0.35), transparent 58%),
+        linear-gradient(135deg, rgba(11,31,42,0.92), rgba(18,51,66,0.82));
+      z-index: -2;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.20;
+      z-index: -1;
+      pointer-events:none;
+    }
+
+    .hero h1{
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+    .hero p{
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      max-width: 52ch;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.92);
+      font-weight: 600;
+      font-size: 0.95rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .pill i{ color: var(--sa-primary); }
+
+    .btn-main{
+      background: var(--sa-primary);
+      border: none;
+      color: var(--sa-ink);
+      padding: 12px 18px;
+      font-weight: 800;
+      border-radius: 14px;
+      box-shadow: 0 14px 30px rgba(126,187,220,0.35);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+    .btn-main:hover{
+      filter: brightness(0.95);
+      transform: translateY(-2px);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 12px 18px;
+      font-weight: 700;
+      border-radius: 14px;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .btn-ghost:hover{
+      background: rgba(255,255,255,0.16);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- GLASS SURFACES ---------- */
+    .glass{
+      background: rgba(255,255,255,0.90);
+      border: 1px solid rgba(18, 51, 66, 0.08);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .glass .form-control{
+      border-radius: 14px;
+      padding: 12px 12px;
+      border: 1px solid rgba(18, 51, 66, 0.14);
+    }
+    .glass .form-control:focus{
+      border-color: rgba(126,187,220,0.9);
+      box-shadow: 0 0 0 0.2rem rgba(126,187,220,0.25);
+    }
+
+    section{ padding: 80px 0; }
+    .section-title{
+      text-align: center;
+      font-weight: 800;
+      color: var(--sa-ink);
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+    .section-subtitle{
+      text-align: center;
+      color: rgba(11,31,42,0.70);
+      max-width: 68ch;
+      margin: 0 auto 44px;
+    }
+
+    /* ---------- PROGRAM CARDS ---------- */
+    .glass-card{
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(18, 51, 66, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+      box-shadow: 0 10px 28px rgba(11,31,42,0.06);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .glass-card::after{
+      content:"";
+      position:absolute;
+      width: 220px; height: 220px;
+      right: -120px; top: -120px;
+      background: radial-gradient(circle at 30% 30%, rgba(126,187,220,0.35), transparent 60%);
+      transform: rotate(10deg);
+    }
+    .glass-card:hover{
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lift);
+      background: rgba(255,255,255,0.92);
+    }
+
+    .icon-box{
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom: 16px;
+      color: var(--sa-ink);
+      background: linear-gradient(135deg, rgba(126,187,220,0.90), rgba(47,127,158,0.55));
+      box-shadow: 0 12px 22px rgba(47,127,158,0.18);
+      position: relative;
+      z-index: 1;
+      font-size: 22px;
+    }
+    .glass-card h4{
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      position: relative;
+      z-index: 1;
+    }
+    .glass-card p, .glass-card li{
+      color: rgba(11,31,42,0.75);
+      position: relative;
+      z-index: 1;
+    }
+    .glass-card ul{ padding-left: 18px; margin-bottom: 0; }
+    .glass-card ul li{ margin-bottom: 8px; }
+
+    /* ---------- CTA STRIP ---------- */
+    .cta-strip{
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(126,187,220,0.25), rgba(47,127,158,0.10));
+      border: 1px solid rgba(18,51,66,0.08);
+      box-shadow: 0 14px 40px rgba(11,31,42,0.08);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer{
+      background: linear-gradient(135deg, rgba(11,31,42,0.98), rgba(18,51,66,0.95));
+      color: rgba(255,255,255,0.86);
+      padding-top: 60px;
+    }
+    footer h5{
+      color: #fff;
+      font-weight: 800;
+    }
+    .footer-links a{
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+    }
+    .footer-links a:hover{
+      color: #fff;
+    }
+    .footer-social a{
+      display: inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      margin-right: 10px;
+      transition: transform 180ms ease, background 180ms ease;
+      color: #fff;
+      text-decoration:none;
+    }
+    .footer-social a:hover{
+      transform: translateY(-2px);
+      background: rgba(126,187,220,0.22);
+    }
+
+    /* ---------- FLOATING BACK TO TOP ---------- */
+    .to-top{
+      position: fixed;
+      right: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      border: 0;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 16px 36px rgba(11,31,42,0.18);
+      display: inline-flex;
+      align-items:center;
+      justify-content:center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 200ms ease, transform 200ms ease;
+      z-index: 1050;
+    }
+    .to-top.show{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .to-top i{ color: var(--sa-ink); }
+
+    /* Make form + hero spacing nicer on mobile */
+    @media (max-width: 991.98px){
+      section{ padding: 70px 0; }
+      .hero{ padding: 30px 0; }
+    }
+  </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="110" tabindex="0">
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand" href="#">Swivel Academy</a>
-</div>
-</nav>
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Clicking logo/brand returns to landing page -->
+      <a class="navbar-brand" href="#top" aria-label="Swivel Academy home">
+        <img class="brand-logo" src="images/swivelacademy.jpeg" alt="Swivel Academy logo" />
+        <span>Swivel Academy</span>
+      </a>
 
-<!-- HERO -->
-<section class="hero">
-<div class="container">
-<div class="row align-items-center">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-<div class="col-md-6 text-white" data-aos="fade-right">
-<h1>Get Learning. Begin Making Money.</h1>
-<p>Career-focused professional training programs designed to prepare you for real-world success.</p>
-<a href="#programs" class="btn btn-main mt-3">Explore Programs</a>
-</div>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Enquiry</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-main d-inline-flex align-items-center gap-2" href="#contact">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Talk to Us</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<div class="col-md-6" data-aos="fade-left">
-<div class="glass">
-<h4 class="text-center">Quick Enquiry</h4>
-<form id="bannerForm">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="tel" name="mobile" placeholder="Mobile Number" required>
-<textarea name="message" rows="4" placeholder="Message"></textarea>
-<button type="submit" class="btn btn-main w-100">Send Message</button>
-</form>
-</div>
-</div>
+  <!-- HERO / LANDING PAGE -->
+  <section id="top" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 text-white" data-aos="fade-right">
+          <div class="pill mb-3">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Professional Training • Placement Support • Internships</span>
+          </div>
 
-</div>
-</div>
-</section>
+          <h1>Get Learning. Begin Making Money.</h1>
+          <p class="mt-3">
+            Career-focused programs designed to build real skills — with guidance, projects, and interview preparation
+            that help you move faster.
+          </p>
 
-<!-- PROGRAMS -->
-<section id="programs" style="background:linear-gradient(135deg,#eaf3ff,#dbe9ff);">
-<div class="container">
-<h2 class="section-title">Our Professional Training Programs</h2>
-<div class="row g-4">
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="#programs" class="btn btn-main">
+              Explore Programs <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              Quick Enquiry <i class="fa-regular fa-message ms-1"></i>
+            </a>
+          </div>
 
-<!-- Course with Placements -->
-<div class="col-md-6 col-lg-4" data-aos="zoom-in">
-<div class="glass-card">
-<div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
-<h4>Course with Placements</h4>
-<p>Our career-focused courses are designed to prepare students for real-world industry requirements through structured, practical, and placement-driven training.</p>
-<ul>
-<li>Training from Industry Experts</li>
-<li>Useful Projects & Current Case Studies</li>
-<li>Resume Development</li>
-<li>Practice Interviews</li>
-<li>Complete Placement Support</li>
-</ul>
-<p><strong>Ideal for:</strong> Job seekers, career switchers, and freshers</p>
-</div>
-</div>
+          <div class="row g-3 mt-4">
+            <div class="col-12 col-sm-6">
+              <div class="cta-strip">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="icon-box" style="width:48px;height:48px;border-radius:16px;font-size:18px;">
+                    <i class="fa-solid fa-diagram-project"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-white">Practical Projects</div>
+                    <div class="small text-white-50">Build real-world confidence with hands-on work.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="cta-strip">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="icon-box" style="width:48px;height:48px;border-radius:16px;font-size:18px;">
+                    <i class="fa-solid fa-user-tie"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold text-white">Interview Support</div>
+                    <div class="small text-white-50">Resume + mock interviews + career guidance.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- NQT -->
-<div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-<div class="glass-card">
-<div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-<h4>NQT Training (Preparation for Placement Exams)</h4>
-<p>Gain confidence in your IT placement exams.</p>
-<ul>
-<li>Aptitude Practice</li>
-<li>Logical Reasoning</li>
-<li>Fundamentals of Coding</li>
-<li>Technical Interview Preparation</li>
-<li>Series of Mock Tests</li>
-<li>HR Interview Guidance</li>
-</ul>
-<p><strong>Ideal for:</strong> Recent graduates and final-year students aiming for IT careers</p>
-</div>
-</div>
+        <!-- Form -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="glass">
+            <h4 class="text-center fw-bold mb-3">Quick Enquiry</h4>
+            <form id="bannerForm" novalidate>
+              <label class="visually-hidden" for="bName">Your Name</label>
+              <input id="bName" class="form-control mb-3" type="text" name="name" placeholder="Your Name" required />
 
-<!-- Field Marketing -->
-<div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-<div class="glass-card">
-<div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
-<h4>Training in Field Marketing</h4>
-<ul>
-<li>Direct Customer Communication</li>
-<li>Sales Methods</li>
-<li>Lead Generation</li>
-<li>Effective Communication</li>
-<li>Strategies for Product Promotion</li>
-<li>Practical Field Experience</li>
-</ul>
-<p><strong>Ideal for:</strong> Entrepreneurs and business-minded students</p>
-</div>
-</div>
+              <label class="visually-hidden" for="bEmail">Email Address</label>
+              <input id="bEmail" class="form-control mb-3" type="email" name="email" placeholder="Email Address" required />
 
-<!-- Internship -->
-<div class="col-md-6" data-aos="zoom-in">
-<div class="glass-card">
-<div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
-<h4>Program for Internships for Final Year Students</h4>
-<ul>
-<li>Active Live Projects</li>
-<li>Real Work Experience</li>
-<li>Certificate of Internship</li>
-<li>Performance-Based Placement Opportunities</li>
-<li>Exposure to Actual Workplace Environment</li>
-</ul>
-<p><strong>Gain experience prior to graduating.</strong></p>
-</div>
-</div>
+              <label class="visually-hidden" for="bMobile">Mobile Number</label>
+              <input id="bMobile" class="form-control mb-3" type="tel" name="mobile" placeholder="Mobile Number" required />
 
-<!-- Soft Skills -->
-<div class="col-md-6" data-aos="zoom-in" data-aos-delay="150">
-<div class="glass-card">
-<div class="icon-box"><i class="fa-solid fa-comments"></i></div>
-<h4>Training for Soft Skills (College Students)</h4>
-<ul>
-<li>Group Discussion</li>
-<li>Public Speaking</li>
-<li>Spoken English</li>
-<li>Professional Etiquette</li>
-<li>Personality Development</li>
-<li>Interview Skills</li>
-</ul>
-<p><strong>Ideal for:</strong> College students preparing for careers</p>
-</div>
-</div>
+              <label class="visually-hidden" for="bMsg">Message</label>
+              <textarea id="bMsg" class="form-control mb-3" name="message" rows="4" placeholder="Message"></textarea>
 
-</div>
-</div>
-</section>
+              <button type="submit" class="btn btn-main w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                <span class="btn-text">Send Message</span>
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+              </button>
 
-<!-- ADMISSION ENQUIRY -->
-<section id="contact">
-<div class="container">
-<h2 class="section-title">Admission Enquiry</h2>
-<div class="row justify-content-center">
-<div class="col-md-6">
-<div class="glass">
-<form id="contactForm">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="tel" name="mobile" placeholder="Mobile Number" required>
-<textarea name="message" rows="4" placeholder="Your Enquiry"></textarea>
-<button type="submit" class="btn btn-main w-100">Submit Enquiry</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
+              <div class="small text-muted mt-3 text-center">
+                By submitting, you agree to be contacted by Swivel Academy.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-<div class="container">
-<div class="row">
+  <!-- PROGRAMS -->
+  <section id="programs" style="background: linear-gradient(135deg, rgba(126,187,220,0.14), rgba(255,255,255,0.85));">
+    <div class="container">
+      <h2 class="section-title">Our Professional Training Programs</h2>
+      <p class="section-subtitle">
+        Compact, job-focused programs with a modern learning approach — ideal for students, freshers, and career switchers.
+      </p>
 
-<div class="col-md-4 mb-4">
-<h5>Swivel Academy</h5>
-<p>Professional training institute focused on placements, internships and skill development. We transform students into confident industry-ready professionals.</p>
-</div>
+      <div class="row g-4">
+        <!-- Course with Placements -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+            <h4>Course with Placements</h4>
+            <p>
+              Structured training with a placement-driven approach to match real industry expectations.
+            </p>
+            <ul>
+              <li>Training from Industry Experts</li>
+              <li>Useful Projects & Case Studies</li>
+              <li>Resume Development</li>
+              <li>Practice Interviews</li>
+              <li>Placement Support</li>
+            </ul>
+            <p class="mt-3"><strong>Ideal for:</strong> Job seekers, career switchers, and freshers</p>
+          </div>
+        </div>
 
-<div class="col-md-3 mb-4">
-<h5>Contact</h5>
-<p>Chennai, Tamil Nadu 600116</p>
-<p>admin@swivel.co.in</p>
-<p>+91 84380 74230</p>
-</div>
+        <!-- NQT -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+            <h4>NQT Training (Placement Exam Prep)</h4>
+            <p>Build confidence for IT placement exams with structured practice.</p>
+            <ul>
+              <li>Aptitude Practice</li>
+              <li>Logical Reasoning</li>
+              <li>Fundamentals of Coding</li>
+              <li>Technical Interview Preparation</li>
+              <li>Mock Tests + HR Guidance</li>
+            </ul>
+            <p class="mt-3"><strong>Ideal for:</strong> Recent graduates and final-year students</p>
+          </div>
+        </div>
 
-<div class="col-md-3 mb-4">
-<h5>Programs</h5>
-<ul class="list-unstyled footer-links">
-<li>Course with Placements</li>
-<li>NQT Training</li>
-<li>Field Marketing</li>
-<li>Internship Program</li>
-<li>Soft Skills Training</li>
-</ul>
-</div>
+        <!-- Field Marketing -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+            <h4>Training in Field Marketing</h4>
+            <p>Hands-on communication and selling skills that work in the field.</p>
+            <ul>
+              <li>Direct Customer Communication</li>
+              <li>Sales Methods</li>
+              <li>Lead Generation</li>
+              <li>Effective Communication</li>
+              <li>Strategies for Product Promotion</li>
+              <li>Practical Field Exposure</li>
+            </ul>
+            <p class="mt-3"><strong>Ideal for:</strong> Entrepreneurs and business-minded students</p>
+          </div>
+        </div>
 
-<div class="col-md-2 mb-4">
-<h5>Follow Us</h5>
-<ul class="list-unstyled footer-social">
-<li><a href="https://www.instagram.com/jeyanth_groups?igsh=YTdmaGEwOHltdXNi&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-<li><a href="https://www.linkedin.com/in/swivel-training?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-<li><a href="https://swivtrek.in/" target="_blank"><i class="fa-solid fa-globe"></i></a></li>
-</ul>
-</div>
+        <!-- Internship -->
+        <div class="col-md-6" data-aos="zoom-in">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
+            <h4>Internship Program (Final Year Students)</h4>
+            <p>Get real work exposure with mentorship and project experience.</p>
+            <ul>
+              <li>Active Live Projects</li>
+              <li>Real Work Experience</li>
+              <li>Certificate of Internship</li>
+              <li>Performance-Based Placement Opportunities</li>
+              <li>Workplace Environment Exposure</li>
+            </ul>
+            <p class="mt-3"><strong>Outcome:</strong> Experience before you graduate.</p>
+          </div>
+        </div>
 
-</div>
+        <!-- Soft Skills -->
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="150">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+            <h4>Soft Skills Training (College Students)</h4>
+            <p>Communication skills that level up interviews and teamwork.</p>
+            <ul>
+              <li>Group Discussion</li>
+              <li>Public Speaking</li>
+              <li>Spoken English</li>
+              <li>Professional Etiquette</li>
+              <li>Personality Development</li>
+              <li>Interview Skills</li>
+            </ul>
+            <p class="mt-3"><strong>Ideal for:</strong> Students preparing for careers</p>
+          </div>
+        </div>
+      </div>
 
-<hr style="background:white;">
-<div class="text-center pb-3">
-<p>© 2026 Swivel Academy. All Rights Reserved.</p>
-</div>
-</div>
-</footer>
+      <!-- Mid CTA -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="cta-strip d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+            <div>
+              <div class="fw-bold" style="color: var(--sa-ink); font-size: 1.15rem;">
+                Not sure which program fits you?
+              </div>
+              <div class="text-muted">
+                Send an enquiry — we’ll guide you to the best option based on your goal.
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-main">
+              Get Guidance <i class="fa-solid fa-compass ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    </div>
+  </section>
 
-<script>
-AOS.init();
+  <!-- WHY US -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Why Swivel Academy</h2>
+      <p class="section-subtitle">
+        A modern learning experience that stays compact, practical, and interview-ready.
+      </p>
 
-/* EmailJS */
-(function(){
-emailjs.init("nkbVQd3QEzeUDUZmp"); // Replace with your EmailJS Public Key
-})();
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <h4>Mentor-Led</h4>
+            <p>Learn with clarity through structured mentoring and checkpoints.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-list-check"></i></div>
+            <h4>Clear Roadmap</h4>
+            <p>Each program follows a goal-based roadmap from basics to job-ready.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-file-lines"></i></div>
+            <h4>Resume Support</h4>
+            <p>Strong resumes, projects, and the right presentation for interviews.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+          <div class="glass-card">
+            <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h4>Ongoing Help</h4>
+            <p>Enquiry → training → interview prep, with support throughout.</p>
+          </div>
+        </div>
+      </div>
 
-function attachForm(id){
-const form=document.getElementById(id);
-if(form){
-form.addEventListener("submit",function(e){
-e.preventDefault();
-emailjs.sendForm(
-"service_nxhaguf",
-"template_kjd5ctw",
-form
-).then(function(){
-alert("Message sent successfully!");
-form.reset();
-},function(error){
-console.log("EmailJS Error:",error);
-alert("Failed to send message");
-});
-});
-}
-}
+      <!-- FAQ -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="glass">
+            <h4 class="fw-bold mb-3">FAQ</h4>
+            <div class="accordion" id="faqAcc">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+                    How do I choose the right program?
+                  </button>
+                </h2>
+                <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    Tell us your background and goal (job / exam / internship / soft skills). We’ll suggest the best fit and a plan.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                    Do you help with interviews and resumes?
+                  </button>
+                </h2>
+                <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    Yes. We include resume guidance, mock interviews, and practice sessions as part of the training support.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="q3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                    Is this website mobile friendly?
+                  </button>
+                </h2>
+                <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAcc">
+                  <div class="accordion-body">
+                    Yes. The layout is responsive and works well on Android and iPhone screens, including safe-area handling on iOS.
+                  </div>
+                </div>
+              </div>
+            </div><!-- /accordion -->
+          </div>
+        </div>
+      </div>
 
-attachForm("contactForm");
-attachForm("bannerForm");
-</script>
+    </div>
+  </section>
 
+  <!-- ADMISSION ENQUIRY -->
+  <section id="contact" style="background: linear-gradient(135deg, rgba(126,187,220,0.10), rgba(255,255,255,0.92));">
+    <div class="container">
+      <h2 class="section-title">Admission Enquiry</h2>
+      <p class="section-subtitle">
+        Fill the form below and we’ll get back to you quickly.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-7" data-aos="zoom-in">
+          <div class="glass">
+            <form id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="cName">Full Name</label>
+                  <input id="cName" class="form-control" type="text" name="name" placeholder="Full Name" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="cMobile">Mobile Number</label>
+                  <input id="cMobile" class="form-control" type="tel" name="mobile" placeholder="Mobile Number" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="cEmail">Email Address</label>
+                  <input id="cEmail" class="form-control" type="email" name="email" placeholder="Email Address" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="cMsg">Your Enquiry</label>
+                  <textarea id="cMsg" class="form-control" name="message" rows="4" placeholder="Tell us what you’re looking for"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-main w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                    <span class="btn-text">Submit Enquiry</span>
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="small text-muted mt-3">
+              Prefer direct contact? Email <strong>info@swivelit.in</strong> or call <strong>+91 84380 74230</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>Swivel Academy</h5>
+          <p>
+            Professional training institute focused on placements, internships and skill development.
+            We transform students into confident industry-ready professionals.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i>Chennai, Tamil Nadu 600116</p>
+          <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i>info@swivelit.in</p>
+          <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>+91 84380 74230</p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="footer-social mt-2">
+            <a href="https://www.instagram.com/jeyanth_groups?igsh=YTdmaGEwOHltdXNi&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/swivel-training?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://swivtrek.in/" target="_blank" rel="noopener" aria-label="Website">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+          </div>
+
+          <ul class="list-unstyled footer-links mt-3 mb-0">
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#contact">Admission Enquiry</a></li>
+            <li><a href="#top">Back to Top</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="border-light opacity-25 my-4" />
+
+      <div class="text-center pb-4 small">
+        © 2026 Swivel Academy. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script>
+    // AOS (respect reduced motion)
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    AOS.init({
+      duration: 700,
+      once: true,
+      disable: reduceMotion
+    });
+
+    // EmailJS
+    (function(){
+      emailjs.init("nkbVQd3QEzeUDUZmp"); // Replace with your EmailJS Public Key if needed
+    })();
+
+    function setButtonLoading(btn, isLoading){
+      const spinner = btn.querySelector(".spinner-border");
+      const text = btn.querySelector(".btn-text");
+      if(!spinner || !text) return;
+      spinner.classList.toggle("d-none", !isLoading);
+      btn.disabled = isLoading;
+      text.textContent = isLoading ? "Sending..." : text.dataset.original || text.textContent;
+    }
+
+    function attachForm(id){
+      const form = document.getElementById(id);
+      if(!form) return;
+
+      const btn = form.querySelector("button[type='submit']");
+      const text = btn ? btn.querySelector(".btn-text") : null;
+      if(text && !text.dataset.original) text.dataset.original = text.textContent;
+
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+
+        if(btn) setButtonLoading(btn, true);
+
+        emailjs.sendForm(
+          "service_nxhaguf",
+          "template_kjd5ctw",
+          form
+        ).then(function(){
+          alert("Message sent successfully!");
+          form.reset();
+        }, function(error){
+          console.log("EmailJS Error:", error);
+          alert("Failed to send message");
+        }).finally(function(){
+          if(btn) setButtonLoading(btn, false);
+        });
+      });
+    }
+
+    attachForm("contactForm");
+    attachForm("bannerForm");
+
+    // Navbar scroll effect
+    const nav = document.getElementById("mainNav");
+    const onScroll = () => {
+      if(window.scrollY > 10) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Close mobile menu when clicking a nav link
+    const navMenu = document.getElementById("navMenu");
+    const bsCollapse = navMenu ? new bootstrap.Collapse(navMenu, { toggle: false }) : null;
+    document.querySelectorAll("#navMenu .nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        if(window.getComputedStyle(document.querySelector(".navbar-toggler")).display !== "none"){
+          bsCollapse && bsCollapse.hide();
+        }
+      });
+    });
+
+    // Back to top
+    const toTopBtn = document.getElementById("toTopBtn");
+    const toggleToTop = () => {
+      if(window.scrollY > 600) toTopBtn.classList.add("show");
+      else toTopBtn.classList.remove("show");
+    };
+    window.addEventListener("scroll", toggleToTop, { passive: true });
+    toggleToTop();
+
+    toTopBtn.addEventListener("click", () => {
+      document.getElementById("top").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  </script>
 </body>
 </html>
