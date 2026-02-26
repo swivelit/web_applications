@@ -29,7 +29,7 @@
   <style>
     :root{
       /* Brand */
-      --sa-primary: #7ebbdc;     /* requested */
+      --sa-primary: #7ebbdc;
       --sa-primary-100: #eaf6fc;
       --sa-primary-200: #cfeaf5;
       --sa-primary-300: #aed9ee;
@@ -54,12 +54,11 @@
                   radial-gradient(1000px 600px at 90% 10%, rgba(126,187,220,0.35), transparent 55%),
                   var(--sa-bg);
       color: var(--sa-ink);
-      padding-top: var(--nav-h); /* prevent fixed navbar overlap */
+      padding-top: var(--nav-h);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Reduce animations if user prefers */
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior: auto; }
       *{ animation: none !important; transition: none !important; }
@@ -366,7 +365,6 @@
     }
     .to-top i{ color: var(--sa-ink); }
 
-    /* Make form + hero spacing nicer on mobile */
     @media (max-width: 991.98px){
       section{ padding: 70px 0; }
       .hero{ padding: 30px 0; }
@@ -379,7 +377,6 @@
   <!-- NAVBAR -->
   <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <!-- Clicking logo/brand returns to landing page -->
       <a class="navbar-brand" href="#top" aria-label="Swivel Academy home">
         <img class="brand-logo" src="images/swivelacademy.jpeg" alt="Swivel Academy logo" />
         <span>Swivel Academy</span>
@@ -394,10 +391,14 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
           <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
           <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+
+          <!-- Enquiry: scrolls to form section -->
           <li class="nav-item"><a class="nav-link" href="#contact">Enquiry</a></li>
+
+          <!-- Talk to Us: CALL button -->
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-main d-inline-flex align-items-center gap-2" href="#contact">
-              <i class="fa-solid fa-paper-plane"></i>
+            <a class="btn btn-main d-inline-flex align-items-center gap-2" href="tel:+918438074230">
+              <i class="fa-solid fa-phone"></i>
               <span>Talk to Us</span>
             </a>
           </li>
@@ -466,10 +467,8 @@
           <div class="glass">
             <h4 class="text-center fw-bold mb-3">Quick Enquiry</h4>
             <form id="bannerForm" novalidate>
-              <!-- Anti-bot honeypot (leave empty) -->
               <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-              <!-- These fields are sent to EmailJS template -->
               <input type="hidden" name="to_email" value="Hariks2095@swivelit.in" />
               <input type="hidden" name="subject" value="enquiry" />
               <input type="hidden" name="form_type" value="banner_quick_enquiry" />
@@ -512,14 +511,11 @@
       </p>
 
       <div class="row g-4">
-        <!-- Course with Placements -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in">
           <div class="glass-card">
             <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
             <h4>Course with Placements</h4>
-            <p>
-              Structured training with a placement-driven approach to match real industry expectations.
-            </p>
+            <p>Structured training with a placement-driven approach to match real industry expectations.</p>
             <ul>
               <li>Training from Industry Experts</li>
               <li>Useful Projects & Case Studies</li>
@@ -531,7 +527,6 @@
           </div>
         </div>
 
-        <!-- NQT -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="glass-card">
             <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
@@ -548,7 +543,6 @@
           </div>
         </div>
 
-        <!-- Field Marketing -->
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="glass-card">
             <div class="icon-box"><i class="fa-solid fa-bullhorn"></i></div>
@@ -566,7 +560,6 @@
           </div>
         </div>
 
-        <!-- Internship -->
         <div class="col-md-6" data-aos="zoom-in">
           <div class="glass-card">
             <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
@@ -583,7 +576,6 @@
           </div>
         </div>
 
-        <!-- Soft Skills -->
         <div class="col-md-6" data-aos="zoom-in" data-aos-delay="150">
           <div class="glass-card">
             <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
@@ -602,7 +594,6 @@
         </div>
       </div>
 
-      <!-- Mid CTA -->
       <div class="row mt-5">
         <div class="col-12">
           <div class="cta-strip d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
@@ -663,7 +654,6 @@
         </div>
       </div>
 
-      <!-- FAQ -->
       <div class="row justify-content-center mt-5">
         <div class="col-lg-10" data-aos="fade-up">
           <div class="glass">
@@ -725,10 +715,8 @@
         <div class="col-lg-7" data-aos="zoom-in">
           <div class="glass">
             <form id="contactForm" novalidate>
-              <!-- Anti-bot honeypot (leave empty) -->
               <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-              <!-- These fields are sent to EmailJS template -->
               <input type="hidden" name="to_email" value="Hariks2095@swivelit.in" />
               <input type="hidden" name="subject" value="enquiry" />
               <input type="hidden" name="form_type" value="admission_enquiry" />
@@ -762,7 +750,7 @@
             </form>
 
             <div class="small text-muted mt-3">
-              Prefer direct contact? Email <strong>swivel.training@gmail.com</strong> or call <strong>+91 84380 74230</strong>.
+              Prefer direct contact? Email <strong>Hariks2095@swivelit.in</strong> or call <strong>+91 84380 74230</strong>.
             </div>
           </div>
         </div>
@@ -785,7 +773,7 @@
         <div class="col-md-4">
           <h5>Contact</h5>
           <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i>Chennai, Tamil Nadu 600116</p>
-          <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i>swivel.training@gmail.com</p>
+          <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i>Hariks2095@swivelit.in</p>
           <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>+91 84380 74230</p>
         </div>
 
@@ -820,7 +808,6 @@
     </div>
   </footer>
 
-  <!-- Back to top button -->
   <button class="to-top" id="toTopBtn" type="button" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
@@ -830,22 +817,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <script>
-    // AOS (respect reduced motion)
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    AOS.init({
-      duration: 700,
-      once: true,
-      disable: reduceMotion
-    });
+    AOS.init({ duration: 700, once: true, disable: reduceMotion });
 
     // EmailJS
     (function(){
-      emailjs.init("-7wkbGnC_50wjRavn"); // Your EmailJS Public Key
+      emailjs.init("-7wkbGnC_50wjRavn");
     })();
 
-    // OPTIONAL: Simple client-side throttle to reduce spam (per browser)
-    // If you don't want any throttling, set THROTTLE_MS = 0
-    const THROTTLE_MS = 15000; // 15 seconds
+    const THROTTLE_MS = 15000;
     let lastSendAt = 0;
 
     function setButtonLoading(btn, isLoading){
@@ -868,19 +848,14 @@
       form.addEventListener("submit", function(e){
         e.preventDefault();
 
-        // Anti-bot honeypot check
         const hp = form.querySelector("input[name='website']");
-        if(hp && hp.value && hp.value.trim() !== ""){
-          // silently ignore bot submissions
-          return;
-        }
+        if(hp && hp.value && hp.value.trim() !== "") return;
 
         if(!form.checkValidity()){
           form.reportValidity();
           return;
         }
 
-        // Optional throttling
         if(THROTTLE_MS > 0){
           const now = Date.now();
           if(now - lastSendAt < THROTTLE_MS){
@@ -890,7 +865,6 @@
           lastSendAt = now;
         }
 
-        // Add useful metadata to email template variables
         const pageUrl = form.querySelector("input[name='page_url']");
         const submittedAt = form.querySelector("input[name='submitted_at']");
         if(pageUrl) pageUrl.value = window.location.href;
@@ -899,8 +873,8 @@
         if(btn) setButtonLoading(btn, true);
 
         emailjs.sendForm(
-          "service_ewvubh9",     // ✅ your Outlook service id
-          "template_7bvvb7l",    // your template id
+          "service_ewvubh9",
+          "template_7bvvb7l",
           form
         ).then(function(){
           alert("Enquiry sent successfully!");
