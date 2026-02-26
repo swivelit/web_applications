@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JEY Groups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.jpeg" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Animation balls -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <img src="images/logo.jpeg" alt="JEY GROUPS Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="nav" class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Jey Groups
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="s-technology.html">Swivel Technology</a></li>
+                                <li><a class="dropdown-item" href="s-training.html">Swivel Training</a></li>
+                                <li><a class="dropdown-item" href="manufacture.html">Swivel Manufacturing (AI, Robotics
+                                        & Drones)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero section index">
+        <div id="tsparticles"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h1 class="hero-title">
+                        BUILD YOUR FUTURE WITH <span>JEY GROUPS</span>
+                    </h1>
+                    <!-- <p class="hero-sub">
+                        Premium Training • Assured Placement • Industry-Ready Careers
+                    </p> -->
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="hero-form premium-card glass">
+                        <h4 style="text-align: center;">Quick Enquiry</h4>
+                        <!-- <input type="text" placeholder="Full Name">
+                        <input type="email" placeholder="Email Address">
+                        <input type="tel" placeholder="Mobile Number">
+                        <button class="btn btn-gold w-100">Submit</button> -->
+
+                        <form id="bannerForm">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                            <input type="tel" name="mobile" placeholder="Mobile Number" required>
+                            <textarea name="message" rows="4" placeholder="Message"></textarea>
+                            <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section dark index">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img class="img-fluid rounded-4" src="images/grab_basket.jpeg">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h2 class="fancy-title">About Us</h2>
+                    <p>
+                        JEY GROUPS is a leading organization successfully operating 18+ major projects
+                        across multiple industries. We are now launching our new E-commerce initiative,
+                        GRABBASKETS, with a massive rollout across Tamil Nadu simultaneously
+                        connecting 3000 employees, 40,000 shops, and 4 million products.
+                    </p>
+                    <p>
+                        As part of this expansion, we are offering students an excellent opportunity to join
+                        our workforce through structured training programs followed by assured
+                        placements. The available job roles are listed below:
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section index" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title fancy-title">What We Do</h2>
+            <div class="row g-4">
+
+                <!-- SERVICE 1 -->
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="premium-card">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+                        <h4>WEBSITE HANDLING (APPLICATION & SERVER OPERATIONS)</h4>
+                        <hr>
+                        <ul class="service-points">
+                            <li>You will be trained to manage websites, applications, and server operations.</li>
+                            <li>Work involves monitoring, updating, and ensuring smooth functioning of platforms.</li>
+                            <li>The job operates in rotational shifts (Morning & Noon).</li>
+                            <li>You will gain complete knowledge of how an application works from scratch.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SERVICE 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card">
+                        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b5">
+                        <h4>DIGITAL MARKETING WITH AI</h4>
+                        <hr>
+                        <ul class="service-points">
+                            <li>No coding knowledge required.</li>
+                            <li>You will be trained in AI-powered digital marketing tools and strategies.</li>
+                            <li>The role focuses on creativity, content planning, market research, and campaign
+                                execution.</li>
+                            <li>Ideal for students who want a creative and fast-growing career path.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SERVICE 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+                        <h4>DEVELOPER (WEB, APPLICATION & SERVER DEVELOPMENT)</h4>
+                        <hr>
+                        <ul class="service-points">
+                            <li>You will learn to build complete systems including websites, applications, and backend
+                                servers.</li>
+                            <li>Training includes hands-on development with industry-standard tools and technologies.
+                            </li>
+                            <li>Suitable for students passionate about coding and technology.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section index">
+        <div class="container">
+            <h2 class="section-title fancy-title">Meet Our Team</h2>
+
+            <!-- TEAM DESCRIPTION -->
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <p class="team-description text-center">
+                        Our team brings extensive expertise across large-scale project execution, digital ecosystems,
+                        and advanced technology operations. With experience managing <strong>18+ major projects</strong>
+                        and now leading the statewide launch of our <strong>GrabBasket E-commerce platform</strong>,
+                        our professionals excel in website handling, application management, server operations,
+                        digital marketing with AI, and end-to-end system development.
+                        <br><br>
+                        We combine strong technical knowledge with real-time operational efficiency, enabling us to
+                        onboard <strong>3000 employees</strong>, collaborate with <strong>40,000 shops</strong>, and
+                        manage over <strong>4 million products</strong> seamlessly. Our team’s deep industry insight,
+                        technical capability, and commitment to innovation ensure that every student trained with us
+                        gains practical, industry-ready skills aligned with current IT and E-commerce standards.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TEAM CARDS -->
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-2" data-aos="fade-up">
+                    <div class="premium-card text-center">
+                        <img class="team-img" src="images/jeyanth.jpeg">
+                        <h6>Jeyanth Ayyapparaj</h6>
+                        <span>CEO</span>
+                    </div>
+                </div>
+
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="premium-card text-center">
+                        <img class="team-img" src="images/ragul.jpeg">
+                        <h6>Ragul</h6>
+                        <span>Business Lead</span>
+                    </div>
+                </div>
+
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card text-center">
+                        <img class="team-img" src="images/hari.jpeg">
+                        <h6>Hari Krishnan</h6>
+                        <span>AI Lead</span>
+                    </div>
+                </div>
+
+                <div class="col-md-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card text-center">
+                        <img class="team-img" src="images/harsha.jpeg">
+                        <h6>Harsha</h6>
+                        <span>Marketing Lead</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section dark index">
+        <div class="container">
+            <h2 class="section-title fancy-title">Why choose us</h2>
+
+            <!-- TEAM DESCRIPTION -->
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <p class="team-description text-center">
+                        The training program is offered at a fee of
+                        ₹10,000 + GST, after which candidates will be
+                        placed at an annual package of ₹3,00,000 (3
+                        LPA). As an added advantage, the offer letter
+                        will be provided first, allowing candidates to
+                        secure their job before beginning the training.
+                        With only limited openings available across
+                        Tamil Nadu, interested students are
+                        encouraged to enroll at the earliest.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TEAM CARDS -->
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="premium-card text-center">
+                        <h6>PLAN FOR SUCCESS</h6>
+                        <span>Our success plan focuses on
+                            innovation, skilled talent, and
+                            strong project execution to
+                            drive continuous growth at
+                            Jey Groups.</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card text-center">
+                        <h6>ATTENTION TO DETAILS</h6>
+                        <span>We ensure every process is
+                            executed with complete
+                            attention to detail and
+                            precision.</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card text-center">
+                        <h6>AWARD-WINNING</h6>
+                        <span>An award-winning company
+                            known for excellence and
+                            innovation.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="premium-card text-center">
+                        <h6>MEETING DEADLINES</h6>
+                        <span>Jey Groups has set January 31st
+                            as the final deadline. All
+                            candidates are requested to
+                            complete the process on time</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section dark index">
+        <div class="container">
+
+            <h2 class="section-title fancy-title text-center mb-5">
+                Learners Who Choose Growth, Stories That Inspire
+            </h2>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+
+                    <!-- ===== SLIDE 1 ===== -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+
+                            <!-- Card 1 -->
+                            <div class="col-md-4">
+                                <div class="testimonial-card premium-card text-center">
+                                    <img src="images/Lingesh.jpeg" class="testimonial-img" alt="Mayuri">
+                                    <a href="https://www.linkedin.com/posts/lingesh-m-328b501a9_jeygroups-digitalmarketing-newbeginnings-activity-7420359387833311232-p0dq/?utm_source=share&utm_medium=member_ios&rcm=ACoAADDB6tABmXrbmnBpiAkF6eMJQSAWO3Z1XFo"
+                                        target="_blank" class="linkedin-badge">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                    <h6>Lingesh</h6>
+                                    <span class="testimonial-role">
+                                        Digital Marketer
+                                    </span>
+                                    <p class="testimonial-text mt-3">
+                                        I’m happy to share that I have successfully completed my training and placement
+                                        in Jey Groups. My current Role as a Digital Marketing Associate. Grate
+                                        opportunity, guidance, and support from the entire teams. Looking forward to
+                                        learning, growing, and contributing meaningfully to the organization’s success.
+                                        Thank you to everyone who supported me throughout this journey. 🚀
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-md-4">
+                                <div class="testimonial-card premium-card text-center">
+                                    <img src="images/Sruthi.jpeg" class="testimonial-img" alt="Arjun">
+                                    <a href="https://www.linkedin.com/posts/sruthi-sundar-19b7b4161_jeygroups-digitalmarketing-newbeginnings-activity-7420397505919639552-J5cJ?utm_source=share&utm_medium=member_ios&rcm=ACoAACa9OwcBDkEb15vnGO8UYq0a-_-77cNaZz4"
+                                        target="_blank" class="linkedin-badge">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                    <h6>Sruthi</h6>
+                                    <span class="testimonial-role">
+                                        Digital Marketer
+                                    </span>
+                                    <p class="testimonial-text mt-3">
+                                        I’m happy to share that I have successfully completed my training and placement
+                                        in Jey Groups. My current Role as a Digital Marketing Associate. Grate
+                                        opportunity, guidance, and support from the entire teams. Looking forward to
+                                        learning, growing, and contributing meaningfully to the organization’s success.
+                                        Thank you to everyone who supported me throughout this journey. 🚀
+
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-md-4">
+                                <div class="testimonial-card premium-card text-center">
+                                    <img src="images/Apsara.jpeg" class="testimonial-img" alt="Sneha">
+                                    <a href="https://www.linkedin.com/posts/apsara-banu-3242733a8_jeygroups-digitalmarketing-newbeginnings-activity-7420400157617344513-xvFE?utm_source=share&utm_medium=member_android&rcm=ACoAAGO05QwBZ_Vx7t1EDu_mbCkmXSvKLHv04HU"
+                                        target="_blank" class="linkedin-badge">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                    <h6>Apsara </h6>
+                                    <span class="testimonial-role">
+                                        Digital Marketer
+                                    </span>
+                                    <p class="testimonial-text mt-3">
+                                        I’m happy to share that I have successfully completed my training and placement
+                                        in Jey Groups. My current Role as a Digital Marketing Associate. Grate
+                                        opportunity, guidance, and support from the entire teams. Looking forward to
+                                        learning, growing, and contributing meaningfully to the organization’s success.
+                                        Thank you to everyone who supported me throughout this journey. 🚀
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS -->
+    <section id="careers" class="section index">
+        <div class="container">
+            <h2 class="section-title fancy-title">Career Opportunities</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="premium-card">
+                        <h4>Website Handling</h4>
+                        <p>Responsible for managing, updating, and maintaining company websites to ensure smooth
+                            performance and a consistent user experience. Handles content updates, UI improvements, and
+                            basic technical issues across all devices.</p>
+                        <h5>Responsibilities:</h5>
+                        <ul>
+                            <li>Manage and update website content regularly</li>
+                            <li>Ensure responsive and cross-browser compatibility</li>
+                            <li>Monitor website performance and fix issues</li>
+                            <li>Coordinate with design and marketing teams</li>
+                            <li>Maintain website security and backups</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="premium-card">
+                        <h4>Digital Marketing (AI)</h4>
+                        <p>We are seeking a Digital Marketing Executive with hands-on experience in AI-powered marketing
+                            tools. The role focuses on driving online growth through data-driven strategies, automation,
+                            and performance marketing using modern AI tools and platforms.</p>
+                        <h5>Responsibilities:</h5>
+                        <ul>
+                            <li>Plan and execute digital marketing campaigns</li>
+                            <li>Use AI tools for content creation, ads, and analytics</li>
+                            <li>Manage social media, SEO, and paid campaigns</li>
+                            <li>Track performance and optimize campaigns using insights</li>
+                            <li>Improve brand visibility and lead generation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="premium-card">
+                        <h4>Full Stack Developer</h4>
+                        <p>We are hiring a Full Stack Developer who can build and maintain scalable web applications.
+                            The ideal candidate should be comfortable working with both frontend and backend
+                            technologies and delivering clean, efficient, and secure code.</p>
+                        <h5>Responsibilities:</h5>
+                        <ul>
+                            <li>Develop frontend interfaces using modern frameworks</li>
+                            <li>Build backend APIs and manage databases</li>
+                            <li>Integrate third-party services and APIs</li>
+                            <li>Optimize application performance and security</li>
+                            <li>Collaborate with designers and project teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section index">
+        <div class="container contact-content">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="section-title fancy-title text-center">Get In Touch</h2>
+                    <form id="contactForm" class="contact-form premium-card glass">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="tel" name="mobile" placeholder="Mobile Number" required>
+                        <textarea name="message" rows="4" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer section dark">
+        <div class="container">
+            <div class="row">
+
+                <!-- Column 1 -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="gold-text">Swivel IT & Training Institute</h5>
+                    <p>
+                        We help people turn skills into opportunities through job-ready IT & non-IT training,
+                        freelancing support, and digital business solutions. Managed by Dolphin Education & Rural
+                        Development Trust under JEY Groups.
+                    </p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="gold-text">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Who We Are</a></li>
+                        <li><a href="#services">What We Do</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="gold-text">Contact Info</h5>
+                    <p>Chennai, Tamil Nadu 600116</p>
+                    <p>admin@swivel.co.in</p>
+                    <p>+91 84380 74230</p>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="col-md-2 mb-4">
+                    <h5 class="gold-text">Follow Us</h5>
+                    <ul class="list-unstyled footer-links footer-social">
+                        <li>
+                            <a href="https://www.instagram.com/jey.groups?igsh=MWd1bGI0amtkYnp6Mw==" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jey-groups-32358a3b1/"
+                                target="_blank">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://swivtrek.in/" target="_blank">
+                                <i class="fa-solid fa-globe"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom line -->
+            <div class="footer-bottom text-center mt-4 pt-3">
+                © 2025 Swivel IT & Training Institute | Designed by JEY Groups
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 1️⃣ EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+    <!-- 2️⃣ Initialize EmailJS -->
+    <script>
+        window.onload = function () {
+            console.log("EmailJS object:", emailjs);
+            emailjs.init("nkbVQd3QEzeUDUZmp");
+        };
+    </script>
+
+    <!-- 3️⃣ Custom JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

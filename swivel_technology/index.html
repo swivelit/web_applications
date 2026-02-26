@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swivel Technology | JEY Groups</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #C68E5B;
+            --secondary: #F5E6D3;
+            --accent: #4A2E1F;
+            --white: #ffffff;
+            --dark-caramel: #b37746;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: var(--accent);
+            line-height: 1.7;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #C68E5B, #b37746);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 10px 10px 0 0;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #b37746, #9e6338);
+            transform: translateY(-3px);
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            height: 72px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(to bottom, #ffffff, #F5E6D3);
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .divider {
+            height: 2px;
+            width: 80px;
+            background: var(--primary);
+            margin: 20px 0 40px 0;
+            border-radius: 5px;
+        }
+
+        .cta {
+            background: var(--secondary);
+            text-align: center;
+            border-radius: 30px;
+            margin: 60px 20px;
+            padding: 60px 20px;
+        }
+
+        footer {
+            background: var(--accent);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media(max-width:768px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#grab">Products</a></li>
+                    <li><a href="#goal">Goal</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero fade">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Swivel Technology<br>Building Companies. Empowering the Future.</h1>
+                    <div class="divider"></div>
+                    <h3>Smart Solutions for Smart Businesses</h3>
+                    <p>Boasting a focus on innovation, technology, and local business development, JEY GROUPS is a
+                        quickly growing company network.
+                        Our goal is to support small business owners and provide strong digital solutions for the
+                        future.</p>
+                    <a href="#grab" class="btn">Explore Our Solutions</a>
+                    <a href="#contact" class="btn">Get Started Today</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200"
+                        alt="Technology Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img class="section-img"
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200"
+                        alt="Business Growth">
+                </div>
+                <div class="col-lg-6">
+                    <h2>About JEY Groups</h2>
+                    <div class="divider"></div>
+                    <p>JEY GROUPS is a rapidly expanding business network focused on innovation, technology, and local
+                        business growth.
+                        We empower entrepreneurs and small businesses with digital tools and scalable solutions that
+                        prepare them for the future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWIVEL -->
+    <section id="swivel" class="fade" style="background:#F5E6D3;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>Swivel Technology</h2>
+                    <div class="divider"></div>
+                    <h3>Smart Solutions for Smart Businesses</h3>
+                    <p>We develop innovative digital solutions for entrepreneurs, small businesses, and local shops.</p>
+                    <p>We believe every company should have a digital presence.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="section-img"
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
+                        alt="Digital Technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRAB -->
+    <section id="grab" class="fade">
+        <div class="container text-center">
+            <h2>Grab Basket – Your Online Store Made Simple</h2>
+            <div class="divider mx-auto"></div>
+
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">Mobile-friendly platform</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">Easy to use</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">Affordable pricing</div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card">Fast product upload</div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card">Simple order processing</div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card">Safe payment options</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOAL -->
+    <section id="goal" class="fade" style="background:#F5E6D3;">
+        <div class="container text-center">
+            <h2>Our Goal</h2>
+            <div class="divider mx-auto"></div>
+
+            <img class="section-img mb-4" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200"
+                alt="Startup Goal">
+
+            <p>
+                To introduce the digital world to all small businesses and entrepreneurs and help them transition from
+                traditional business models to modern digital ecosystems.
+            </p>
+
+            <p>
+                At Swivel Technology, we aim to bridge the gap between local businesses and advanced technology by
+                providing accessible, affordable, and scalable digital solutions.
+            </p>
+
+            <p>
+                Our mission is to empower startups, shop owners, and independent entrepreneurs with tools that increase
+                visibility, improve operational efficiency, and unlock new revenue opportunities in the online
+                marketplace.
+            </p>
+
+            <p>
+                We believe that every business — no matter how small — deserves the opportunity to grow, compete, and
+                succeed in the digital era.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta fade" id="contact">
+        <h2>Now is the time to put your business online!</h2>
+        <p>Sign up with Grab Basket and grow digitally with Swivel Technology.</p>
+        <a href="#" class="btn">Sign Up Now</a>
+        <a href="#" class="btn">Contact Us Today</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section pt-5 pb-4">
+        <div class="container">
+            <div class="row justify-content-between"> <!-- Column 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="gold-text">Swivel Technology</h5>
+                    <p style="color: white;"> We build innovative digital solutions for entrepreneurs, startups, and
+                        small businesses. A proud
+                        technology division of JEY Groups focused on empowering local businesses through smart digital
+                        platforms. </p>
+                </div> <!-- Column 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="gold-text">Contact Info</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li>Chennai, Tamil Nadu 600116</li>
+                        <li> <a href="mailto:admin@swivel.co.in">admin@swivel.co.in</a> </li>
+                        <li> <a href="tel:+918438074230">+91 84380 74230</a> </li>
+                    </ul>
+                </div> <!-- Column 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="gold-text">Follow Us</h5>
+                    <ul class="list-unstyled footer-links footer-social d-flex gap-3">
+                        <li> <a href="https://www.instagram.com/swivel.technologies?igsh=MTU3bWl4bm81NjI4Ng=="
+                                target="_blank"> <i class="fa-brands fa-instagram"></i> </a> </li>
+                        <li> <a href="https://www.linkedin.com/in/jey-groups-32358a3b1/" target="_blank"> <i
+                                    class="fa-brands fa-linkedin-in"></i> </a> </li>
+                        <li> <a href="https://swivtrek.in/" target="_blank"> <i class="fa-solid fa-globe"></i> </a>
+                        </li>
+                        <li> <a href="https://www.facebook.com/" target="_blank"> <i
+                                    class="fa-brands fa-facebook-f"></i> </a> </li>
+                    </ul>
+                </div>
+            </div> <!-- Bottom Line -->
+            <div class="row">
+                <div class="col-12 text-center mt-4 pt-3 border-top">
+                    <p style="color: white;" class="mb-0"> © 2026 Swivel Technology | All Rights Reserved </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const faders = document.querySelectorAll('.fade');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('show');
+            });
+        }, { threshold: 0.3 });
+        faders.forEach(f => observer.observe(f));
+    </script>
+
+</body>
+
+</html>
