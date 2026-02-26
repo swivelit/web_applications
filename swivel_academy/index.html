@@ -466,10 +466,15 @@
           <div class="glass">
             <h4 class="text-center fw-bold mb-3">Quick Enquiry</h4>
             <form id="bannerForm" novalidate>
-              <!-- These hidden fields are sent to EmailJS template -->
-              <input type="hidden" name="to_email" value="info@swivelit.in" />
+              <!-- Anti-bot honeypot (leave empty) -->
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <!-- These fields are sent to EmailJS template -->
+              <input type="hidden" name="to_email" value="Hariks2095@swivelit.in" />
               <input type="hidden" name="subject" value="enquiry" />
               <input type="hidden" name="form_type" value="banner_quick_enquiry" />
+              <input type="hidden" name="page_url" value="" />
+              <input type="hidden" name="submitted_at" value="" />
 
               <label class="visually-hidden" for="bName">Your Name</label>
               <input id="bName" class="form-control mb-3" type="text" name="name" placeholder="Your Name" autocomplete="name" required />
@@ -720,10 +725,15 @@
         <div class="col-lg-7" data-aos="zoom-in">
           <div class="glass">
             <form id="contactForm" novalidate>
-              <!-- These hidden fields are sent to EmailJS template -->
-              <input type="hidden" name="to_email" value="info@swivelit.in" />
+              <!-- Anti-bot honeypot (leave empty) -->
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <!-- These fields are sent to EmailJS template -->
+              <input type="hidden" name="to_email" value="Hariks2095@swivelit.in" />
               <input type="hidden" name="subject" value="enquiry" />
               <input type="hidden" name="form_type" value="admission_enquiry" />
+              <input type="hidden" name="page_url" value="" />
+              <input type="hidden" name="submitted_at" value="" />
 
               <div class="row g-3">
                 <div class="col-md-6">
@@ -752,7 +762,7 @@
             </form>
 
             <div class="small text-muted mt-3">
-              Prefer direct contact? Email <strong>info@swivelit.in</strong> or call <strong>+91 84380 74230</strong>.
+              Prefer direct contact? Email <strong>swivel.training@gmail.com</strong> or call <strong>+91 84380 74230</strong>.
             </div>
           </div>
         </div>
@@ -775,7 +785,7 @@
         <div class="col-md-4">
           <h5>Contact</h5>
           <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i>Chennai, Tamil Nadu 600116</p>
-          <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i>info@swivelit.in</p>
+          <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i>swivel.training@gmail.com</p>
           <p class="mb-0"><i class="fa-solid fa-phone me-2"></i>+91 84380 74230</p>
         </div>
 
@@ -830,8 +840,13 @@
 
     // EmailJS
     (function(){
-      emailjs.init("nkbVQd3QEzeUDUZmp"); // Replace with your EmailJS Public Key if needed
+      emailjs.init("-7wkbGnC_50wjRavn"); // Your EmailJS Public Key
     })();
+
+    // OPTIONAL: Simple client-side throttle to reduce spam (per browser)
+    // If you don't want any throttling, set THROTTLE_MS = 0
+    const THROTTLE_MS = 15000; // 15 seconds
+    let lastSendAt = 0;
 
     function setButtonLoading(btn, isLoading){
       const spinner = btn.querySelector(".spinner-border");
@@ -853,23 +868,46 @@
       form.addEventListener("submit", function(e){
         e.preventDefault();
 
+        // Anti-bot honeypot check
+        const hp = form.querySelector("input[name='website']");
+        if(hp && hp.value && hp.value.trim() !== ""){
+          // silently ignore bot submissions
+          return;
+        }
+
         if(!form.checkValidity()){
           form.reportValidity();
           return;
         }
 
+        // Optional throttling
+        if(THROTTLE_MS > 0){
+          const now = Date.now();
+          if(now - lastSendAt < THROTTLE_MS){
+            alert("Please wait a few seconds and try again.");
+            return;
+          }
+          lastSendAt = now;
+        }
+
+        // Add useful metadata to email template variables
+        const pageUrl = form.querySelector("input[name='page_url']");
+        const submittedAt = form.querySelector("input[name='submitted_at']");
+        if(pageUrl) pageUrl.value = window.location.href;
+        if(submittedAt) submittedAt.value = new Date().toISOString();
+
         if(btn) setButtonLoading(btn, true);
 
         emailjs.sendForm(
-          "service_nxhaguf",
-          "template_kjd5ctw",
+          "service_ewvubh9",     // ✅ your Outlook service id
+          "template_7bvvb7l",    // your template id
           form
         ).then(function(){
-          alert("Message sent successfully!");
+          alert("Enquiry sent successfully!");
           form.reset();
         }, function(error){
           console.log("EmailJS Error:", error);
-          alert("Failed to send message");
+          alert("Failed to send enquiry. Please try again.");
         }).finally(function(){
           if(btn) setButtonLoading(btn, false);
         });
