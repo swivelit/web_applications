@@ -8,202 +8,13 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <style>
-        :root {
-            --primary: #C68E5B;
-            --secondary: #F5E6D3;
-            --accent: #4A2E1F;
-            --white: #ffffff;
-            --dark-caramel: #b37746;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #fff;
-            color: var(--accent);
-            line-height: 1.7;
-        }
-
-        section {
-            padding: 90px 0;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        h1 {
-            font-size: 48px;
-        }
-
-        h2 {
-            font-size: 34px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 30px;
-            background: linear-gradient(45deg, #C68E5B, #b37746);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 10px 10px 0 0;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: linear-gradient(45deg, #b37746, #9e6338);
-            transform: translateY(-3px);
-        }
-
-        header {
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav img {
-            height: 72px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--accent);
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        .hero {
-            padding-top: 150px;
-            background: linear-gradient(to bottom, #ffffff, #F5E6D3);
-        }
-
-        .hero img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .section-img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .divider {
-            height: 2px;
-            width: 80px;
-            background: var(--primary);
-            margin: 20px 0 40px 0;
-            border-radius: 5px;
-        }
-
-        .cta {
-            background: var(--secondary);
-            text-align: center;
-            border-radius: 30px;
-            margin: 60px 20px;
-            padding: 60px 20px;
-        }
-
-        footer {
-            background: var(--accent);
-            color: #fff;
-            padding: 60px 0 20px;
-        }
-
-        footer a {
-            color: #ddd;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 20px;
-            font-size: 14px;
-        }
-
-        .fade {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media(max-width:768px) {
-            h1 {
-                font-size: 34px;
-            }
-
-            nav ul {
-                display: none;
-            }
-        }
-    </style>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -211,201 +22,369 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html"><img src="images/swivelacademy.png" alt="Swivel Logo"></a>
+                <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#grab">Products</a></li>
-                    <li><a href="#goal">Goal</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+
             </nav>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero fade">
+    <div id="ball-container"></div>
+
+    <section id="home" class="hero">
+
         <div class="container">
+
             <div class="row align-items-center">
-                <div class="col-lg-6">
+
+                <div class="col-lg-6" data-aos="fade-right">
+
                     <h1>Swivel Technology<br>Building Companies. Empowering the Future.</h1>
+
                     <div class="divider"></div>
+
                     <h3>Smart Solutions for Smart Businesses</h3>
-                    <p>Boasting a focus on innovation, technology, and local business development, JEY GROUPS is a
-                        quickly growing company network.
-                        Our goal is to support small business owners and provide strong digital solutions for the
-                        future.</p>
+
+                    <p>
+                        Boasting a focus on innovation, technology, and local business development,
+                        JEY GROUPS is a quickly growing company network helping businesses grow digitally.
+                    </p>
+
                     <a href="#grab" class="btn">Explore Our Solutions</a>
-                    <a href="#contact" class="btn">Get Started Today</a>
+                    <a href="contact.html" class="btn">Get Started Today</a>
+
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200"
-                        alt="Technology Team">
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="images/home_tech.jpg">
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="fade">
+    <section id="about" data-aos="fade-up">
+
         <div class="container">
+
             <div class="row align-items-center">
+
                 <div class="col-lg-6">
-                    <img class="section-img"
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200"
-                        alt="Business Growth">
+
+                    <img class="section-img" src="images/home_about.jpg">
+
                 </div>
+
                 <div class="col-lg-6">
+
                     <h2>About JEY Groups</h2>
+
                     <div class="divider"></div>
-                    <p>JEY GROUPS is a rapidly expanding business network focused on innovation, technology, and local
-                        business growth.
-                        We empower entrepreneurs and small businesses with digital tools and scalable solutions that
-                        prepare them for the future.</p>
+
+                    <p>
+                        JEY GROUPS is a rapidly expanding business network focused on innovation,
+                        technology, and local business growth.
+                    </p>
+
+                    <p>
+                        We empower entrepreneurs and small businesses with digital tools,
+                        web platforms, and scalable technology solutions.
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- SWIVEL -->
-    <section id="swivel" class="fade" style="background:#F5E6D3;">
+    <section id="swivel" style="background:#F5E6D3;" data-aos="fade-up">
+
         <div class="container">
+
             <div class="row align-items-center">
+
                 <div class="col-lg-6">
-                    <h2>Swivel Technology</h2>
+
+                    <h2>Technology</h2>
+
                     <div class="divider"></div>
+
                     <h3>Smart Solutions for Smart Businesses</h3>
-                    <p>We develop innovative digital solutions for entrepreneurs, small businesses, and local shops.</p>
-                    <p>We believe every company should have a digital presence.</p>
+
+                    <p>
+                        Swivel Technology builds modern digital platforms,
+                        websites, business tools, and online stores for startups,
+                        entrepreneurs and local businesses.
+                    </p>
+
+                    <p>
+                        We believe every company should have a strong digital presence
+                        to compete in today's modern market.
+                    </p>
+
                 </div>
+
                 <div class="col-lg-6">
-                    <img class="section-img"
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200"
-                        alt="Digital Technology">
+
+                    <img class="section-img" src="images/home_tech.jpg">
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- GRAB -->
-    <section id="grab" class="fade">
+    <section id="grab" data-aos="fade-up">
+
         <div class="container text-center">
+
             <h2>Grab Basket – Your Online Store Made Simple</h2>
+
             <div class="divider mx-auto"></div>
 
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="card">Mobile-friendly platform</div>
+            <p>
+                Grab Basket helps shop owners and entrepreneurs create their own
+                online store easily without technical knowledge.
+            </p>
+
+            <div class="row mt-5 g-4">
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-mobile-screen fa-2x mb-3"></i>
+                        <h5>Mobile Friendly</h5>
+                        <p>Your online store works perfectly on mobile devices.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">Easy to use</div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-bolt fa-2x mb-3"></i>
+                        <h5>Easy to Use</h5>
+                        <p>Simple dashboard to manage products and orders.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">Affordable pricing</div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-coins fa-2x mb-3"></i>
+                        <h5>Affordable Pricing</h5>
+                        <p>Low cost platform designed for small businesses.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card">Fast product upload</div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-upload fa-2x mb-3"></i>
+                        <h5>Fast Product Upload</h5>
+                        <p>Add products quickly and manage your inventory easily.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card">Simple order processing</div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-cart-shopping fa-2x mb-3"></i>
+                        <h5>Simple Order System</h5>
+                        <p>Track and process customer orders with ease.</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card">Safe payment options</div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card">
+                        <i class="fa-solid fa-lock fa-2x mb-3"></i>
+                        <h5>Secure Payments</h5>
+                        <p>Safe and reliable payment options for customers.</p>
+                    </div>
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- GOAL -->
-    <section id="goal" class="fade" style="background:#F5E6D3;">
+    <section id="goal" style="background:#F5E6D3;" data-aos="fade-up">
+
         <div class="container text-center">
+
             <h2>Our Goal</h2>
+
             <div class="divider mx-auto"></div>
 
-            <img class="section-img mb-4" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200"
-                alt="Startup Goal">
+            <img class="goal-img mb-4" src="images/home_goal.jpg">
 
             <p>
-                To introduce the digital world to all small businesses and entrepreneurs and help them transition from
-                traditional business models to modern digital ecosystems.
+                Our goal is to bring digital transformation to small businesses,
+                local stores and entrepreneurs.
             </p>
 
             <p>
-                At Swivel Technology, we aim to bridge the gap between local businesses and advanced technology by
-                providing accessible, affordable, and scalable digital solutions.
+                We provide simple and affordable digital solutions
+                that allow traditional businesses to move online
+                and grow faster in the modern economy.
             </p>
 
             <p>
-                Our mission is to empower startups, shop owners, and independent entrepreneurs with tools that increase
-                visibility, improve operational efficiency, and unlock new revenue opportunities in the online
-                marketplace.
-            </p>
-
-            <p>
-                We believe that every business — no matter how small — deserves the opportunity to grow, compete, and
-                succeed in the digital era.
+                Through technology, automation, and online platforms
+                we help businesses improve efficiency and reach more customers.
             </p>
 
         </div>
+
     </section>
 
-    <!-- CTA -->
-    <section class="cta fade" id="contact">
+    <section class="cta" data-aos="zoom-in">
+
         <h2>Now is the time to put your business online!</h2>
-        <p>Sign up with Grab Basket and grow digitally with Swivel Technology.</p>
+
+        <p>
+            Sign up with Grab Basket and start growing your business digitally.
+        </p>
+
         <a href="#" class="btn">Sign Up Now</a>
-        <a href="#" class="btn">Contact Us Today</a>
+
+        <a href="contact.html" class="btn">Contact Us Today</a>
+
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer-section pt-5 pb-4">
+
         <div class="container">
-            <div class="row justify-content-between"> <!-- Column 1 -->
+
+            <div class="row justify-content-between">
+
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="gold-text">Swivel Technology</h5>
-                    <p style="color: white;"> We build innovative digital solutions for entrepreneurs, startups, and
-                        small businesses. A proud
-                        technology division of JEY Groups focused on empowering local businesses through smart digital
-                        platforms. </p>
-                </div> <!-- Column 2 -->
+
+                    <h5>Technology</h5>
+
+                    <p style="color:white;">
+                        We build innovative digital solutions for entrepreneurs,
+                        startups and small businesses.
+                    </p>
+
+                </div>
+
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="gold-text">Contact Info</h5>
-                    <ul class="list-unstyled footer-links">
+
+                    <h5>Contact Info</h5>
+
+                    <ul class="list-unstyled">
+
                         <li>Chennai, Tamil Nadu 600116</li>
-                        <li> <a href="mailto:admin@swivel.co.in">admin@swivel.co.in</a> </li>
-                        <li> <a href="tel:+918438074230">+91 84380 74230</a> </li>
+
+                        <li><a href="mailto:jeygroups@gmail.com">jeygroups@gmail.com</a></li>
+
+                        <li><a href="tel:+918438074230">+91 84380 74230</a></li>
+
                     </ul>
-                </div> <!-- Column 3 -->
+
+                </div>
+
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="gold-text">Follow Us</h5>
-                    <ul class="list-unstyled footer-links footer-social d-flex gap-3">
-                        <li> <a href="https://www.instagram.com/swivel.technologies?igsh=MTU3bWl4bm81NjI4Ng=="
-                                target="_blank"> <i class="fa-brands fa-instagram"></i> </a> </li>
-                        <li> <a href="https://www.linkedin.com/in/jey-groups-32358a3b1/" target="_blank"> <i
-                                    class="fa-brands fa-linkedin-in"></i> </a> </li>
-                        <li> <a href="https://swivtrek.in/" target="_blank"> <i class="fa-solid fa-globe"></i> </a>
-                        </li>
-                        <li> <a href="https://www.facebook.com/" target="_blank"> <i
-                                    class="fa-brands fa-facebook-f"></i> </a> </li>
-                    </ul>
+
+                    <h5>Follow Us</h5>
+
+                    <div class="d-flex gap-3">
+
+                        <a target="_blank"
+                            href="https://www.instagram.com/swivel.technologies?igsh=MTU3bWl4bm81NjI4Ng%3D%3D"><i
+                                class="fa-brands fa-instagram"></i></a>
+
+                        <a target="_blank" href="https://www.linkedin.com/in/jey-groups-32358a3b1/"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+
+                        <a target="_blank" href="https://swivtrek.in/"><i class="fa-solid fa-globe"></i></a>
+
+                    </div>
+
                 </div>
-            </div> <!-- Bottom Line -->
-            <div class="row">
-                <div class="col-12 text-center mt-4 pt-3 border-top">
-                    <p style="color: white;" class="mb-0"> © 2026 Swivel Technology | All Rights Reserved </p>
-                </div>
+
             </div>
+
+            <div class="text-center mt-4 pt-3 border-top">
+
+                <p style="color:white;">
+                    © 2026 Swivel Technology | All Rights Reserved
+                </p>
+
+            </div>
+
         </div>
+
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <script>
-        const faders = document.querySelectorAll('.fade');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('show');
-            });
-        }, { threshold: 0.3 });
-        faders.forEach(f => observer.observe(f));
+        AOS.init({ duration: 1200, once: true });
+
+        window.addEventListener("scroll", function () {
+            document.querySelector("header")
+                .classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
+
+    <script>
+        const container = document.getElementById("ball-container");
+
+        function createBall() {
+
+            const ball = document.createElement("div");
+            ball.classList.add("ball");
+
+            const size = Math.random() * 80 + 20;
+
+            ball.style.width = size + "px";
+            ball.style.height = size + "px";
+
+            ball.style.left = Math.random() * window.innerWidth + "px";
+
+            const colors = ["#38bdf8", "#f472b6", "#34d399", "#facc15", "#a78bfa"];
+
+            ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+            ball.style.animationDuration = (Math.random() * 15 + 10) + "s";
+
+            container.appendChild(ball);
+
+            setTimeout(() => {
+                ball.remove();
+            }, 20000);
+
+        }
+
+        setInterval(createBall, 800);
+    </script>
+
+    <script>
+
+        const currentPage = location.pathname.split("/").pop();
+
+        const menuLinks = document.querySelectorAll("nav ul li a");
+
+        menuLinks.forEach(link => {
+
+            const linkPage = link.getAttribute("href");
+
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            }
+
+        });
+
     </script>
 
 </body>
