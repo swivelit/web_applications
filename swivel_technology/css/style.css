@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #fff;
     color: var(--accent);
     line-height: 1.7;
@@ -70,7 +70,7 @@ p {
 
 /* ================= HEADER ================= */
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: white;
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     padding: 15px 0;
@@ -382,4 +382,13 @@ nav ul li a.active {
 
 nav ul li a.active::after {
     width: 100%;
+}
+
+.founder-img {
+    max-width: 350px;
+    border-radius: 15px;
+}
+
+.founder-section {
+    background: #fff;
 }
