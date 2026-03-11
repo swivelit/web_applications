@@ -29,7 +29,12 @@
     <header>
         <div class="container">
             <nav>
+
                 <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
 
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -92,7 +97,7 @@
 
                     <p>
                         Success often begins with a change in mindset. At the age of 23, with no backup plan or external
-                        support, the journey started with a simple vision—to build opportunities through innovation,
+                        support, the journey started with a simple vision to build opportunities through innovation,
                         technology, and strong determination. Through persistence, learning, and resilience, that vision
                         gradually grew into creating organizations that support businesses and empower individuals.
                     </p>
@@ -346,11 +351,19 @@
                 <div class="divider mx-auto"></div>
 
                 <p class="team-subtitle">
-                    Our team brings extensive expertise across large-scale project execution, digital ecosystems, and advanced technology operations. With experience managing 18+ major projects and now leading the statewide launch of our GrabBasket E-commerce platform, our professionals excel in website handling, application management, server operations, digital marketing with AI, and end-to-end system development.
+                    Our team brings extensive expertise across large-scale project execution, digital ecosystems, and
+                    advanced technology operations. With experience managing 18+ major projects and now leading the
+                    statewide launch of our GrabBasket E-commerce platform, our professionals excel in website handling,
+                    application management, server operations, digital marketing with AI, and end-to-end system
+                    development.
                 </p>
                 <br>
                 <p class="team-subtitle">
-                    We combine strong technical knowledge with real-time operational efficiency, enabling us to onboard 3000 employees, collaborate with 40,000 shops, and manage over 4 million products seamlessly. Our team’s deep industry insight, technical capability, and commitment to innovation ensure that every student trained with us gains practical, industry-ready skills aligned with current IT and E-commerce standards.
+                    We combine strong technical knowledge with real-time operational efficiency, enabling us to onboard
+                    3000 employees, collaborate with 40,000 shops, and manage over 4 million products seamlessly. Our
+                    team’s deep industry insight, technical capability, and commitment to innovation ensure that every
+                    student trained with us gains practical, industry-ready skills aligned with current IT and
+                    E-commerce standards.
                 </p>
 
             </div>
@@ -359,7 +372,7 @@
             <div class="row g-4 justify-content-center">
 
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                <div class="col-lg-2 col-md-6" data-aos="fade-up">
 
                     <div class="team-card text-center">
 
@@ -374,7 +387,7 @@
                 </div>
 
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                <div class="col-lg-2 col-md-6" data-aos="fade-up">
 
                     <div class="team-card text-center">
 
@@ -382,14 +395,14 @@
 
                         <h5>Ragul</h5>
 
-                        <p>Business Lead</p>
+                        <p>Chief Financial Officer (CFO)</p>
 
                     </div>
 
                 </div>
 
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                <div class="col-lg-2 col-md-6" data-aos="fade-up">
 
                     <div class="team-card text-center">
 
@@ -397,14 +410,28 @@
 
                         <h5>Hari Krishnan</h5>
 
-                        <p>AI Lead</p>
+                        <p>Chief Technology Officer (CTO)</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2 col-md-6" data-aos="fade-up">
+
+                    <div class="team-card text-center">
+
+                        <img src="images/maha.jpg" alt="Harsha" class="team-img">
+
+                        <h5>Mahalakshmi</h5>
+
+                        <p>Full stack development</p>
 
                     </div>
 
                 </div>
 
 
-                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                <div class="col-lg-2 col-md-6" data-aos="fade-up">
 
                     <div class="team-card text-center">
 
@@ -412,7 +439,7 @@
 
                         <h5>Harsha</h5>
 
-                        <p>Marketing Lead</p>
+                        <p>Digital Marketing Head</p>
 
                     </div>
 
@@ -571,6 +598,17 @@
                 link.classList.add("active");
             }
 
+        });
+
+    </script>
+
+    <script>
+
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector("nav ul");
+
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("show");
         });
 
     </script>
