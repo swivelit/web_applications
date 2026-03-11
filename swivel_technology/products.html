@@ -24,7 +24,13 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html"><img src="images/logo.png"></a>
+
+                <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">Company</a></li>
@@ -32,6 +38,7 @@
                     <li><a href="career.html">Career</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+
             </nav>
         </div>
     </header>
@@ -335,6 +342,17 @@
                 link.classList.add("active");
             }
 
+        });
+
+    </script>
+
+    <script>
+
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector("nav ul");
+
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("show");
         });
 
     </script>
