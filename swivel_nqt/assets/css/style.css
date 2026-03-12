@@ -1,0 +1,786 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #000000, #0e0e0e);
+    color: #ffffff;
+}
+
+/* ===== INDEX PAGE ===== */
+.loader-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: #d4af37;
+}
+
+.loader-box {
+    text-align: center;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ===== LOGIN PAGE ===== */
+.auth-body {
+    background: linear-gradient(120deg, #000000, #1a1a1a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    background: #111111;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(224, 198, 51, 0.15);
+}
+
+.auth-left {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: #d4af37;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-right {
+    padding: 50px 40px;
+}
+
+.form-control {
+    border-radius: 30px;
+    padding: 12px 18px;
+}
+
+.btn-main {
+    background: linear-gradient(90deg, #d4af37, #b8962e);
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    color: #000;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .auth-left {
+        display: none;
+    }
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .form-control {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #b5b5b5;
+}
+
+/* ===== DASHBOARD ===== */
+.navbar {
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #d4af37 !important;
+}
+
+.hero {
+    color: #d4af37;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.dashboard_hero {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: #d4af37;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.card-module {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.card-module:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    background: #000000;
+    color: #d4af37;
+    padding: 20px;
+    text-align: center;
+}
+
+.application_container {
+    background: linear-gradient(rgb(0 0 0 / 75%), rgb(26 26 26 / 75%)), url(../images/application_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-section {
+    animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* ===== Card Enhancement ===== */
+.app-card {
+    background: #111111;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Form UI ===== */
+.form-label {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #d4af37;
+}
+
+.form-control {
+    border-radius: 14px;
+    padding: 12px 14px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    background: #0d0d0d;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 0.15rem rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    color: #d4af37;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #b8962e);
+    display: block;
+    margin-top: 6px;
+    border-radius: 10px;
+}
+
+/* ===== Button Animation ===== */
+.btn-animated {
+    background: linear-gradient(90deg, #d4af37, #b8962e);
+    border: none;
+    color: #000;
+    border-radius: 30px;
+    padding: 14px 40px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.btn-animated:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== Readonly Field Style ===== */
+input[readonly] {
+    background-color: #1a1a1a;
+    font-weight: 500;
+    color: #d4af37;
+}
+
+/* ===== PROFILE MENU ===== */
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-icon:hover {
+    transform: scale(1.08);
+}
+
+/* Dropdown */
+.profile-menu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 220px;
+    background: #111111;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    display: none;
+    animation: fadeSlide 0.3s ease;
+    z-index: 1000;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+/* Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.profile-header h6 {
+    font-weight: 600;
+    color: #d4af37;
+}
+
+.profile-header small {
+    color: #b5b5b5;
+}
+
+/* Logout Button */
+.profile-logout {
+    width: 100%;
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.profile-logout:hover {
+    background: #bb2d3b;
+    transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== EXAM BOX ===== */
+.exam-box {
+    background: #111111;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.exam-box h5 {
+    font-weight: 600;
+    color: #d4af37;
+}
+
+/* ===== QUESTIONS & OPTIONS ===== */
+.option {
+    border: 1px solid #333;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    background: #0d0d0d;
+    color: #ffffff;
+}
+
+.option:hover {
+    background: #1a1a1a;
+    border-color: #d4af37;
+}
+
+.option.selected {
+    background: #d4af37;
+    color: #000;
+    border-color: #d4af37;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.btn-next {
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 500;
+    background: #d4af37;
+    color: #000;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== TIMER & QUESTION COUNT ===== */
+#timer,
+#qCount {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #d4af37;
+}
+
+/* ===== PROCTORING BOX ===== */
+.proctor-box {
+    background: #000000;
+    color: #d4af37;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 20px;
+}
+
+.proctor-box h6 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.proctor-box video {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+}
+
+.proctor-box p {
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* ===== VIOLATION BANNER ===== */
+.violation-banner {
+    background: #3a2f00;
+    color: #d4af37;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+/* ===== FINISH EXAM SECTION ===== */
+#finishSection {
+    display: none;
+    padding: 50px 20px;
+    text-align: center;
+    background: #111111;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+#finishSection h1 {
+    font-size: 3rem;
+    color: #d4af37;
+}
+
+/* ===== TERMINATED EXAM ===== */
+.exam-terminated {
+    background: #111111;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+}
+
+.exam-terminated h2 {
+    color: #dc3545;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .container-max {
+        padding: 10px;
+    }
+
+    .exam-box {
+        min-height: auto;
+    }
+
+    .proctor-box {
+        margin-top: 20px;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Instruction Css */
+.instruction-card {
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.instruction-header {
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+    color: #d4af37;
+    padding: 20px;
+    border-radius: 16px 16px 0 0;
+}
+
+.rule-list li {
+    margin-bottom: 12px;
+}
+
+.warning-box {
+    background: #2a2200;
+    border-left: 5px solid #d4af37;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* ===== PREMIUM BLACK-GOLD MODULE CARDS ===== */
+
+.card-module {
+    background: linear-gradient(145deg, #0b0b0b, #1a1a1a);
+    color: #f5d27a;
+    /* soft gold */
+    border-radius: 22px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.8),
+        inset 0 0 25px rgba(255, 215, 0, 0.03);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold glow border effect */
+.card-module::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 215, 0, 0.15),
+            transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card-module:hover::before {
+    opacity: 1;
+}
+
+.card-module:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.9),
+        0 0 35px rgba(255, 215, 0, 0.15);
+}
+
+/* Icons */
+.card-module img {
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.35));
+    transition: transform 0.4s ease;
+}
+
+.card-module:hover img {
+    transform: scale(1.08);
+}
+
+/* Titles */
+.card-module h4 {
+    color: #ffd369;
+    /* gold */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Text */
+.card-module p {
+    color: #e6e6e6;
+    font-size: 14px;
+}
+
+/* Button - Black Gold Premium */
+.card-module .btn-main {
+    background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 10px 28px;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.35);
+    transition: all 0.4s ease;
+}
+
+.card-module .btn-main:hover {
+    background: linear-gradient(90deg, #ffd700, #ffea8a, #ffd700);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+}
+
+/* Section background (optional premium look) */
+section.container.py-5 {
+    background: radial-gradient(circle at top, #111111, #000000);
+}
+
+/* ================================
+   TRAINING PAGE – BLACK GOLD THEME
+   ================================ */
+
+/* -------- NAVBAR -------- */
+.navbar.bg-dark {
+    background: linear-gradient(90deg, #000000, #121212) !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.navbar-brand {
+    color: #d4af37 !important;
+    font-weight: 700;
+}
+
+/* -------- BOOTSTRAP CARD OVERRIDE -------- */
+.card {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+    transition: all 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.85),
+        0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* -------- CARD HEADINGS -------- */
+.card h4,
+.card h6 {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+/* -------- TEXT -------- */
+.card p {
+    color: #cfcfcf;
+}
+
+/* -------- VIDEO PLAYER -------- */
+video {
+    border-radius: 14px;
+    background: #000;
+    box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+/* -------- BUTTONS -------- */
+.btn-primary,
+.btn-success {
+    background: linear-gradient(90deg, #d4af37, #b8962e);
+    border: none;
+    color: #000;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 10px 26px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.55);
+}
+
+/* -------- FORM INPUTS -------- */
+.form-control {
+    background: #0f0f14 !important;
+    border: 1px solid #2c2c35 !important;
+    color: #ffffff !important;
+    border-radius: 14px;
+}
+
+.form-control::placeholder {
+    color: #9b9b9b;
+}
+
+.form-control:focus {
+    background: #0f0f14;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 0.15rem rgba(212, 175, 55, 0.35);
+}
+
+/* -------- PROFILE MENU FIX -------- */
+.profile-menu {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: #fff;
+}
+
+.profile-menu h6 {
+    color: #d4af37;
+}
+
+/* -------- CONTAINER SPACING -------- */
+.container {
+    max-width: 1200px;
+}
+
+/* ================= RECORDED VIDEO AREA ================= */
+
+#videosContainer .card {
+    background: linear-gradient(145deg, #111111, #1c1c1c);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: #ffffff;
+    border-radius: 16px;
+}
+
+/* ================= PROFILE MENU ================= */
+
+.profile-menu {
+    background: #111111;
+    color: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.profile-header h6 {
+    color: #d4af37;
+}
+
+.profile-header small {
+    color: #b5b5b5;
+}
+
+.profile-logout {
+    background: linear-gradient(90deg, #8b0000, #dc3545);
+}
+
+/* ===============================
+   INSTRUCTION PAGE – BLACK GOLD
+   (NO BUTTON STYLES)
+   =============================== */
+
+/* Instruction card */
+.instruction-card {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.8),
+        0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+/* Header */
+.instruction-header {
+    background: linear-gradient(90deg, #000000, #1a1a1a);
+    color: #d4af37;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+/* Instruction text */
+.instruction-card p,
+.rule-list li {
+    color: #d0d0d0;
+}
+
+/* Highlighted strong text */
+.rule-list strong {
+    color: #d4af37;
+}
+
+/* Warning box */
+.warning-box {
+    background: linear-gradient(145deg, #1a1405, #2a2208);
+    border-left: 5px solid #d4af37;
+    color: #f3e7c3;
+}
+
+/* Checkbox */
+.form-check-input {
+    border-color: #d4af37;
+}
+
+.form-check-input:checked {
+    background-color: #d4af37;
+    border-color: #d4af37;
+}
+
+
+.fw-semibold {
+    font-weight: 600 !important;
+    color: #d0d0d0;
+}
