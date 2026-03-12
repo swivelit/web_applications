@@ -2,54 +2,46 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Career | Swivel Technology</title>
+    <title>Swivel Technology | Career</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
     <header>
-
         <div class="container">
-
             <nav>
 
-                <a href="index.html">
-                    <img src="images/logo.png">
-                </a>
+                <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
 
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">Company</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="career.html">Career</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
 
             </nav>
-
         </div>
-
     </header>
 
-
     <div id="ball-container"></div>
-
 
     <section class="about-banner career-banner">
 
@@ -67,7 +59,6 @@
 
     </section>
 
-
     <section>
 
         <div class="container">
@@ -81,7 +72,6 @@
                 <p>Explore our teams driving innovation and growth</p>
 
             </div>
-
 
             <div class="row g-4 justify-content-center">
 
@@ -102,7 +92,6 @@
 
                 </div>
 
-
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
 
                     <div class="card tech-card text-center p-4 h-100">
@@ -119,7 +108,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
 
@@ -139,7 +127,6 @@
 
                 </div>
 
-
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
 
                     <div class="card tech-card text-center p-4 h-100">
@@ -156,7 +143,6 @@
                     </div>
 
                 </div>
-
 
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in">
 
@@ -183,8 +169,6 @@
     </section>
 
 
-
-
     <section style="background:#F5E6D3">
 
         <div class="container">
@@ -199,9 +183,7 @@
 
             </div>
 
-
             <div class="row g-4">
-
 
                 <div class="col-lg-4" data-aos="fade-up">
 
@@ -218,20 +200,16 @@
                         </p>
 
                         <ul>
-
                             <li>Manage and update website content regularly</li>
                             <li>Ensure responsive and cross-browser compatibility</li>
                             <li>Monitor website performance</li>
                             <li>Fix technical issues</li>
                             <li>Maintain website security and backups</li>
-
                         </ul>
 
                     </div>
 
                 </div>
-
-
 
                 <div class="col-lg-4" data-aos="fade-up">
 
@@ -248,20 +226,16 @@
                         </p>
 
                         <ul>
-
                             <li>Plan and execute marketing campaigns</li>
                             <li>Use AI tools for ads and content creation</li>
                             <li>Manage SEO and social media</li>
                             <li>Analyze campaign performance</li>
                             <li>Improve lead generation</li>
-
                         </ul>
 
                     </div>
 
                 </div>
-
-
 
                 <div class="col-lg-4" data-aos="fade-up">
 
@@ -278,19 +252,16 @@
                         </p>
 
                         <ul>
-
                             <li>Develop frontend interfaces</li>
                             <li>Build backend APIs</li>
                             <li>Integrate third-party services</li>
                             <li>Optimize application performance</li>
                             <li>Collaborate with project teams</li>
-
                         </ul>
 
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -298,6 +269,66 @@
 
     </section>
 
+
+    <!-- ENQUIRY FORM SECTION -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2>Apply / Enquiry</h2>
+
+                <div class="divider mx-auto"></div>
+
+                <p>Send us your details and our team will contact you</p>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-6">
+
+                    <form action="https://formsubmit.co/santhiya1813@gmail.com" method="POST">
+
+                        <input type="hidden" name="_subject" value="Career Enquiry">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <select name="role" class="form-control" required>
+                                <option value="">Select Role</option>
+                                <option>Website Handling</option>
+                                <option>Digital Marketing</option>
+                                <option>Full Stack Developer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100">
+                            Submit Enquiry
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <footer class="footer-section pt-5 pb-4">
@@ -339,8 +370,7 @@
 
                     <div class="d-flex gap-3">
 
-                        <a target="_blank"
-                            href="https://www.instagram.com/swivel.technologies?igsh=MTU3bWl4bm81NjI4Ng%3D%3D"><i
+                        <a target="_blank" href="https://www.instagram.com/swivel.technologies"><i
                                 class="fa-brands fa-instagram"></i></a>
 
                         <a target="_blank" href="https://www.linkedin.com/in/jey-groups-32358a3b1/"><i
@@ -366,8 +396,6 @@
 
     </footer>
 
-
-
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script>
@@ -385,8 +413,6 @@
         })
 
     </script>
-
-
 
     <script>
 
@@ -442,6 +468,17 @@
         });
 
     </script>
+
+    <script>
+
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector("nav ul");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+</script>
 
 </body>
 
