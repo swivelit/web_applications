@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2026 at 09:06 AM
+-- Generation Time: Mar 13, 2026 at 12:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -63,11 +63,31 @@ CREATE TABLE `course_enquiries` (
 
 CREATE TABLE `exam_applications` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `application_status` enum('pending','approved','rejected') DEFAULT 'pending',
-  `applied_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `user_email` varchar(150) NOT NULL,
+  `full_name` varchar(150) NOT NULL,
+  `age` int(11) NOT NULL,
+  `gender` enum('Male','Female','Other') NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `whatsapp` varchar(15) DEFAULT NULL,
+  `college` varchar(200) DEFAULT NULL,
+  `qualification` varchar(100) DEFAULT NULL,
+  `passed_out_year` year(4) DEFAULT NULL,
+  `district` varchar(100) DEFAULT NULL,
+  `pincode` varchar(10) DEFAULT NULL,
+  `reference_name` varchar(150) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `course_name` varchar(150) DEFAULT NULL,
+  `fees` decimal(10,2) DEFAULT NULL,
+  `payment_status` enum('pending','paid') DEFAULT 'pending',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `exam_applications`
+--
+
+INSERT INTO `exam_applications` (`id`, `user_email`, `full_name`, `age`, `gender`, `phone`, `whatsapp`, `college`, `qualification`, `passed_out_year`, `district`, `pincode`, `reference_name`, `address`, `course_name`, `fees`, `payment_status`, `created_at`) VALUES
+(1, 'santhiya1813@gmail.com', 'Santhiya M', 25, 'Female', '9080642054', '9080642054', 'Vels university', 'BE', '2022', 'Chennai', '600078', '', 'No.13 gandhi st , choolaipallam , M.G.R nagar chennai-78', 'NQT Exam', 1000.00, 'pending', '2026-03-13 05:47:33');
 
 -- --------------------------------------------------------
 
@@ -77,14 +97,27 @@ CREATE TABLE `exam_applications` (
 
 CREATE TABLE `exam_attempts` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `score` int(11) DEFAULT NULL,
-  `total_marks` int(11) DEFAULT NULL,
-  `result` enum('pass','fail') DEFAULT NULL,
+  `exam_attempt_id` int(11) NOT NULL,
+  `user_email` varchar(150) NOT NULL,
+  `full_name` varchar(150) NOT NULL,
+  `nqt_id` varchar(50) DEFAULT NULL,
+  `role` varchar(50) DEFAULT NULL,
+  `total_questions` int(11) DEFAULT 0,
+  `attempted_questions` int(11) DEFAULT 0,
+  `correct_answers` int(11) DEFAULT 0,
+  `score` int(11) DEFAULT 0,
+  `exam_status` enum('IN_PROGRESS','COMPLETED') DEFAULT 'IN_PROGRESS',
   `started_at` datetime DEFAULT NULL,
-  `submitted_at` datetime DEFAULT NULL
+  `ended_at` datetime DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `exam_attempts`
+--
+
+INSERT INTO `exam_attempts` (`id`, `exam_attempt_id`, `user_email`, `full_name`, `nqt_id`, `role`, `total_questions`, `attempted_questions`, `correct_answers`, `score`, `exam_status`, `started_at`, `ended_at`, `created_at`) VALUES
+(1, 3, 'santhiya1813@gmail.com', 'Santhiya M', NULL, 'CANDIDATE', 5, 5, 3, 3, 'COMPLETED', '2026-03-13 13:01:46', '2026-03-13 13:02:02', '2026-03-13 07:31:46');
 
 -- --------------------------------------------------------
 
@@ -95,10 +128,21 @@ CREATE TABLE `exam_attempts` (
 CREATE TABLE `exam_violations` (
   `id` int(11) NOT NULL,
   `exam_attempt_id` int(11) NOT NULL,
-  `violation_type` varchar(100) DEFAULT NULL,
-  `violation_time` datetime DEFAULT NULL,
-  `remarks` text DEFAULT NULL
+  `user_email` varchar(150) DEFAULT NULL,
+  `full_name` varchar(150) DEFAULT NULL,
+  `nqt_id` varchar(50) DEFAULT NULL,
+  `violation_count` int(11) DEFAULT 1,
+  `violation_types` text DEFAULT NULL,
+  `last_violation_at` datetime DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `exam_violations`
+--
+
+INSERT INTO `exam_violations` (`id`, `exam_attempt_id`, `user_email`, `full_name`, `nqt_id`, `violation_count`, `violation_types`, `last_violation_at`, `created_at`) VALUES
+(1, 1, 'santhiya1813@gmail.com', 'Santhiya M', NULL, 1, 'Face not detected', '2026-03-13 13:02:00', '2026-03-13 07:32:00');
 
 -- --------------------------------------------------------
 
@@ -108,11 +152,17 @@ CREATE TABLE `exam_violations` (
 
 CREATE TABLE `nqt_training_videos` (
   `id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `video_title` varchar(200) DEFAULT NULL,
-  `video_url` text DEFAULT NULL,
-  `uploaded_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `title` varchar(255) NOT NULL,
+  `video_url` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nqt_training_videos`
+--
+
+INSERT INTO `nqt_training_videos` (`id`, `title`, `video_url`, `created_at`) VALUES
+(1, 'Day 1', 'assets/videos/1773391827172_Swivel IT _ Login & Signup - Screencastify - February 18, 2026 10_36 AM.webm', '2026-03-13 08:50:27');
 
 -- --------------------------------------------------------
 
@@ -137,7 +187,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `dob`, `mobile`, `password`, `role`, `status`, `created_at`) VALUES
-(2, 'Santhiya', '2026-02-23', '', 'santhiya1813@gm', '9080642054', '', 'active', '2026-03-09 07:17:55');
+(3, 'Santhiya', 'santhiya1813@gmail.com', '2026-03-11', '9080642054', '$2b$10$/T3s9k2o338UYfcKnJLp0e00deXmbMnZg1Yg/hwJJuaOdvc475O4m', 'trainer', 'active', '2026-03-13 05:34:01');
 
 --
 -- Indexes for dumped tables
@@ -161,31 +211,26 @@ ALTER TABLE `course_enquiries`
 -- Indexes for table `exam_applications`
 --
 ALTER TABLE `exam_applications`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `exam_attempts`
 --
 ALTER TABLE `exam_attempts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `exam_violations`
 --
 ALTER TABLE `exam_violations`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `exam_attempt_id` (`exam_attempt_id`);
+  ADD UNIQUE KEY `exam_attempt_id` (`exam_attempt_id`);
 
 --
 -- Indexes for table `nqt_training_videos`
 --
 ALTER TABLE `nqt_training_videos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -215,31 +260,31 @@ ALTER TABLE `course_enquiries`
 -- AUTO_INCREMENT for table `exam_applications`
 --
 ALTER TABLE `exam_applications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `exam_attempts`
 --
 ALTER TABLE `exam_attempts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `exam_violations`
 --
 ALTER TABLE `exam_violations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nqt_training_videos`
 --
 ALTER TABLE `nqt_training_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -253,30 +298,10 @@ ALTER TABLE `course_enquiries`
   ADD CONSTRAINT `course_enquiries_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `exam_applications`
---
-ALTER TABLE `exam_applications`
-  ADD CONSTRAINT `exam_applications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `exam_applications_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `exam_attempts`
---
-ALTER TABLE `exam_attempts`
-  ADD CONSTRAINT `exam_attempts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `exam_attempts_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
-
---
 -- Constraints for table `exam_violations`
 --
 ALTER TABLE `exam_violations`
   ADD CONSTRAINT `exam_violations_ibfk_1` FOREIGN KEY (`exam_attempt_id`) REFERENCES `exam_attempts` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `nqt_training_videos`
---
-ALTER TABLE `nqt_training_videos`
-  ADD CONSTRAINT `nqt_training_videos_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
