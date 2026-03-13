@@ -31,7 +31,7 @@ exports.startExam = (req, res) => {
                         email: app.user_email,
                         full_name: app.full_name,
                         nqt_id: app.nqt_id,
-                        role: "CANDIDATE",
+                        role: "student",
                         total_questions
                     },
                     (err, result) => {
