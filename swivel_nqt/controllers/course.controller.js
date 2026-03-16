@@ -1,35 +1,92 @@
 const Course = require("../models/course.model");
 
-/* =========================
-   GET ALL COURSES
-========================= */
-exports.getAllCourses = (req, res) => {
-    Course.getAll((err, results) => {
-        if (err) return res.status(500).json({ message: "Error fetching courses" });
-        res.json(results);
+/* GET COURSES */
+exports.getCourses = (req,res)=>{
+    Course.getAllCourses((err,data)=>{
+        if(err) return res.status(500).json({message:"DB error"});
+        res.json(data);
     });
 };
 
-/* =========================
-   CHECK IF STUDENT ENROLLED
-========================= */
-exports.checkEnrollment = (req, res) => {
-    const email = req.params.email;
+/* GET SINGLE COURSE */
+exports.getCourseById = (req,res)=>{
 
-    Course.checkEnrollment(email, (err, result) => {
-        if (err) return res.status(500).json({ message: "Error checking enrollment" });
-        res.json(result[0] || null);
+    Course.getCourseById(req.params.id,(err,data)=>{
+        if(err) return res.status(500).json({message:"DB error"});
+        res.json(data[0]);
     });
+
 };
 
-/* =========================
-   ENROLL STUDENT
-========================= */
-exports.enrollCourse = (req, res) => {
-    const { email, courseId } = req.body;
+/* ADD COURSE */
+exports.addCourse = (req,res)=>{
 
-    Course.enroll(email, courseId, err => {
-        if (err) return res.status(500).json({ message: "Enrollment failed" });
-        res.json({ message: "Enrollment successful" });
+    const {
+        course_name,
+        description,
+        duration,
+        fee,
+        trainer_name,
+        trainer_email,
+        gmeet_link,
+        status
+    } = req.body;
+
+    Course.addCourse([
+        course_name,
+        description,
+        duration,
+        fee,
+        trainer_name,
+        trainer_email,
+        gmeet_link,
+        status
+    ],(err)=>{
+        if(err) return res.status(500).json({message:"Insert failed"});
+        res.json({message:"Course added successfully"});
     });
+
+};
+
+/* UPDATE COURSE */
+exports.updateCourse = (req,res)=>{
+
+    const {
+        course_name,
+        description,
+        duration,
+        fee,
+        trainer_name,
+        trainer_email,
+        gmeet_link,
+        status
+    } = req.body;
+
+    Course.updateCourse(
+        req.params.id,
+        [
+            course_name,
+            description,
+            duration,
+            fee,
+            trainer_name,
+            trainer_email,
+            gmeet_link,
+            status
+        ],
+        (err)=>{
+            if(err) return res.status(500).json({message:"Update failed"});
+            res.json({message:"Course updated"});
+        }
+    );
+};
+
+/* DELETE COURSE */
+exports.deleteCourse = (req,res)=>{
+
+    Course.deleteCourse(req.params.id,(err)=>{
+        if(err) return res.status(500).json({message:"Delete failed"});
+        res.json({message:"Course deleted"});
+    });
+
 };

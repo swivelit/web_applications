@@ -1,24 +1,40 @@
 const db = require("../config/db");
 
-exports.getAll = callback => {
-    db.query("SELECT * FROM courses ORDER BY created_at DESC", callback);
+/* GET ALL COURSES */
+exports.getAllCourses = (cb) => {
+    db.query("SELECT * FROM courses ORDER BY id DESC", cb);
 };
 
-exports.checkEnrollment = (email, callback) => {
-    const sql = `
-        SELECT sc.*, c.course_name, c.gmeet_link
-        FROM student_courses sc
-        JOIN courses c ON sc.course_id = c.id
-        WHERE sc.user_email = ?
-        LIMIT 1
-    `;
-    db.query(sql, [email], callback);
+/* GET SINGLE COURSE */
+exports.getCourseById = (id, cb) => {
+    db.query("SELECT * FROM courses WHERE id = ?", [id], cb);
 };
 
-exports.enroll = (email, courseId, callback) => {
+/* ADD COURSE */
+exports.addCourse = (data, cb) => {
+
     const sql = `
-        INSERT INTO student_courses (user_email, course_id)
-        VALUES (?, ?)
+    INSERT INTO courses
+    (course_name, description, duration, fee, trainer_name, trainer_email, gmeet_link, status)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    db.query(sql, [email, courseId], callback);
+
+    db.query(sql, data, cb);
+};
+
+/* UPDATE COURSE */
+exports.updateCourse = (id, data, cb) => {
+
+    const sql = `
+    UPDATE courses
+    SET course_name=?, description=?, duration=?, fee=?, trainer_name=?, trainer_email=?, gmeet_link=?, status=?
+    WHERE id=?
+    `;
+
+    db.query(sql, [...data, id], cb);
+};
+
+/* DELETE COURSE */
+exports.deleteCourse = (id, cb) => {
+    db.query("DELETE FROM courses WHERE id=?", [id], cb);
 };
