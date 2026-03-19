@@ -32,17 +32,17 @@ function logout() {
     fetch("http://localhost:3000/api/auth/logout", {
         method: "POST"
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.message);
-    })
-    .catch(err => {
-        console.log("Logout API error");
-    })
-    .finally(() => {
-        // Always redirect to login
-        window.location.href = "login.html";
-    });
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.message);
+        })
+        .catch(err => {
+            console.log("Logout API error");
+        })
+        .finally(() => {
+            // Always redirect to login
+            window.location.href = "login.html";
+        });
 }
 
 
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await res.json();
 
         console.log(data, "data");
-        
+
 
         if (data && data.score !== null && scoreEl) {
             scoreEl.style.display = "block";
@@ -191,7 +191,8 @@ function loginRedirect(event) {
             if (res.message === "Login successful") {
                 localStorage.setItem("role", res.role);
                 localStorage.setItem("email", res.email);
-                localStorage.setItem("full_name", res.full_name); // ✅ ADDED
+                localStorage.setItem("full_name", res.full_name);
+                localStorage.setItem("user_id", res.user_id);
                 window.location.href = "dashboard.html";
             } else {
                 alert(res.message);
@@ -232,3 +233,28 @@ function examApplication(event) {
         })
         .catch(() => alert("Application submission failed"));
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const role = localStorage.getItem("role");
+
+    console.log('roleeeeeeeeee', role);
+
+
+    const addCourseLink = document.getElementById("addCourseLink");
+
+    // Hide by default
+    if (addCourseLink) {
+        addCourseLink.style.display = "none";
+        console.log('Nooooooooooo');
+
+    }
+
+    // Show only for admin
+    if (role === "admin" && addCourseLink) {
+        addCourseLink.style.display = "block";
+        console.log('yesssssssss');
+
+    }
+
+});

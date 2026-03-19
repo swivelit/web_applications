@@ -61,7 +61,9 @@ exports.login = (req, res) => {
             message: "Login successful",
             role: user.role,
             email: user.email,
-            full_name: user.full_name
+            full_name: user.full_name,
+            message: "Login successful",
+            user_id: user.id
         });
 
     });

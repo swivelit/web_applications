@@ -21,6 +21,8 @@ app.use("/api/application", require("./routes/application.routes"));
 app.use("/api/exam", require("./routes/exam.routes"));
 app.use("/api/training", require("./routes/training.routes"));
 app.use("/api/course", require("./routes/course.routes"));
+app.use("/api/enquiry", require("./routes/enquiry.routes"));
+app.use("/api/course-training", require("./routes/courseTraining.routes"));
 
 // Pages
 app.get("/", (req, res) => {
