@@ -13,32 +13,35 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container d-flex justify-content-between">
-            <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
-                <img src="assets/images/logo.jpeg" alt="Swivel IT Logo" height="70">
-            </a>
-
-            <div class="profile-wrapper">
-                <div class="profile-icon" onclick="toggleProfileMenu()">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="40">
-                </div>
-
-                <div class="profile-menu" id="profileMenu">
-                    <div class="profile-header">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="50">
-                        <div>
-                            <h6 class="mb-0">User</h6>
-                            <small id="userEmail">user@email.com</small><br>
-                            <small id="userRoleText">Student</small>
-                        </div>
-                    </div>
-                    <hr>
-                    <button class="profile-logout btn btn-danger w-100" onclick="logout()">🚪 Logout</button>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+        <img src="assets/images/swivelacademy-removebg-preview (1).png" alt="Swivel IT Logo"  class="logo-img">
+      </a>
+      <div class="profile-wrapper">
+        <div class="profile-icon" onclick="toggleProfileMenu()">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
         </div>
-    </nav>
+
+        <div class="profile-menu" id="profileMenu">
+          <div class="profile-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+            <div>
+              <h6 class="mb-0" id="profileName">Student</h6>
+              <small id="profileEmail">swivelit@exam.com</small>
+              <small id="profileScore" style="display:none;">Score 0/0</small>
+            </div>
+          </div>
+
+          <hr>
+
+          <button class="profile-logout" onclick="logout()">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
     <!-- ========================================== -->
 
 
