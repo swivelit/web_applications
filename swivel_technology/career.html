@@ -20,28 +20,31 @@
 <body>
 
     <header>
-        <div class="container">
-            <nav>
+  <div class="container">
+    <nav>
 
-                <a href="index.html"><img src="images/logo.png" alt="Swivel Logo"></a>
+      <a href="index.html">
+        <img src="images/logo.png" alt="Swivel Logo">
+      </a>
 
-                <div class="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
 
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Company</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="career.html">Career</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-            </nav>
-        </div>
-    </header>
+    </nav>
+  </div>
+</header>
 
-    <div id="ball-container"></div>
+
+    <!-- <div id="ball-container"></div> -->
 
     <section class="about-banner career-banner">
 
@@ -414,7 +417,7 @@
 
     </script>
 
-    <script>
+    <!-- <script>
 
         const container = document.getElementById("ball-container")
 
@@ -449,7 +452,7 @@
 
         setInterval(createBall, 800)
 
-    </script>
+    </script> -->
 
     <script>
 
@@ -469,15 +472,16 @@
 
     </script>
 
-    <script>
+ 
 
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav ul");
 
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
-});
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("nav ul");
 
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
 </script>
 
 </body>
